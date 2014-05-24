@@ -5,7 +5,402 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)App.xaml.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\ModifiedEncryptor.cpp">
+      <Filter>Libs\kryptan_core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\Pwd.cpp">
+      <Filter>Libs\kryptan_core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\PwdFile.cpp">
+      <Filter>Libs\kryptan_core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\PwdFileWorker.cpp">
+      <Filter>Libs\kryptan_core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\PwdList.cpp">
+      <Filter>Libs\kryptan_core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\SerpentEncryptor.cpp">
+      <Filter>Libs\kryptan_core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\Server.cpp">
+      <Filter>Libs\kryptan_core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\SecureString\SecureString.cpp">
+      <Filter>Libs\kryptan_core\SecureString</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\algebra.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\algparam.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\arc4.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\asn.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\authenc.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\base32.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\base64.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\basecode.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\bfinit.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\blowfish.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\blumshub.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\camellia.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\cast.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\casts.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\cbcmac.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ccm.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\channels.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\cmac.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\cpu.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\crc.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\cryptlib.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\cryptlib_bds.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\default.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\des.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\dessp.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\dh.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\dh2.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\dll.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\dsa.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\eax.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ec2n.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\eccrypto.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ecp.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\elgamal.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\emsa2.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\eprecomp.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\esign.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\files.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\filters.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\fips140.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\fipsalgt.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gcm.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gf2_32.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gf2n.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gf256.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gfpcrypt.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gost.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gzip.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\hex.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\hmac.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\hrtimer.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ida.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\idea.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\integer.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\iterhash.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\luc.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\mars.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\marss.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\md2.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\md4.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\md5.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\misc.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\modes.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\mqueue.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\mqv.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\nbtheory.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\network.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\oaep.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\osrng.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\panama.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\pch.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\pkcspad.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\polynomi.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\pssr.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\pubkey.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\queue.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rabin.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\randpool.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rc2.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rc5.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rc6.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rdtables.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\regtest.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rijndael.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ripemd.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rng.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rsa.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rw.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\safer.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\salsa.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\seal.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\seed.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\serpent.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\sha.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\sha3.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\shacal2.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\shark.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\sharkbox.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\simple.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\skipjack.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\socketft.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\sosemanuk.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\square.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\squaretb.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\strciphr.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\tea.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\tftables.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\tiger.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\tigertab.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\trdlocal.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ttmac.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\twofish.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\wait.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\wake.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\whrlpool.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\winpipes.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\vmac.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\xtr.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\xtrcrypt.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\zdeflate.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\zinflate.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\zlib.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\3way.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\adler32.cpp">
+      <Filter>Libs\cryptopp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.cpp">
@@ -26,6 +421,36 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)App.xaml.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\Server.h">
+      <Filter>Libs\kryptan_core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\core.h">
+      <Filter>Libs\kryptan_core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\Exceptions.h">
+      <Filter>Libs\kryptan_core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\ModifiedEncryptor.h">
+      <Filter>Libs\kryptan_core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\Pwd.h">
+      <Filter>Libs\kryptan_core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\PwdFile.h">
+      <Filter>Libs\kryptan_core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\PwdFileWorker.h">
+      <Filter>Libs\kryptan_core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\PwdList.h">
+      <Filter>Libs\kryptan_core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\SerpentEncryptor.h">
+      <Filter>Libs\kryptan_core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\SecureString\SecureString.h">
+      <Filter>Libs\kryptan_core\SecureString</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.h">
@@ -80,6 +505,18 @@
     </Filter>
     <Filter Include="Common">
       <UniqueIdentifier>{36dcf0a0-fdfa-43b8-be2f-1b23de06ba2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs">
+      <UniqueIdentifier>{e62d0c2f-0976-45aa-9b12-01370a82bfc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\cryptopp">
+      <UniqueIdentifier>{0122ba42-f4d5-4465-9a8a-c205b846c17c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\kryptan_core">
+      <UniqueIdentifier>{e3c2a587-9735-43b8-af07-eada875d7417}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\kryptan_core\SecureString">
+      <UniqueIdentifier>{63cd3fcb-7341-4ae8-8b6a-7ff102239e31}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
