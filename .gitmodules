@@ -1,3 +1,6 @@
 [submodule "kryptan_windows/kryptan_windows.Shared/Libs/kryptan_core"]
 	path = kryptan_windows/kryptan_windows.Shared/Libs/kryptan_core
 	url = git@github.com:alex-caelus/kryptan_core.git
+[submodule "kryptan_windows/kryptan_windows.Shared/Libs/cryptopp"]
+	path = kryptan_windows/kryptan_windows.Shared/Libs/cryptopp
+	url = git@github.com:alex-caelus/cryptopp.git
