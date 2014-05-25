@@ -74,7 +74,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\hrtimer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ida.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\idea.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\integer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\integer.cpp">
+      <PreprocessorDefinitions>__INTEL_COMPILER;NO_OS_DEPENDENCE;CRYPTOPP_DISABLE_SSE2;CRYPTOPP_DISABLE_ASM;KRYPTAN_CORE_DO_NOT_USE_SERVER;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\iterhash.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\luc.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\mars.cpp" />
@@ -133,7 +135,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\trdlocal.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ttmac.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\twofish.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\vmac.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\vmac.cpp">
+      <PreprocessorDefinitions>__INTEL_COMPILER;NO_OS_DEPENDENCE;CRYPTOPP_DISABLE_SSE2;CRYPTOPP_DISABLE_ASM;KRYPTAN_CORE_DO_NOT_USE_SERVER;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\wait.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\wake.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\whrlpool.cpp" />

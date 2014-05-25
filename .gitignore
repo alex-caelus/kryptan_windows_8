@@ -22,7 +22,10 @@
 
 #Visual Studio directories
 Debug
+Release
 ipch
+AppPackages
+ARM
 
 #Visual Studio files
 *.opensdf

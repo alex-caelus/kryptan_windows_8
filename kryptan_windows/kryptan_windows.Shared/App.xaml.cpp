@@ -5,6 +5,7 @@
 
 #include "pch.h"
 #include "HubPage.xaml.h"
+#include "Libs\kryptan_core\core.h"
 
 using namespace kryptan_windows;
 using namespace kryptan_windows::Common;
