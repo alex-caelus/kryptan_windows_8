@@ -1,23 +1,25 @@
 ﻿//
-// SectionPage.xaml.h
-// Declaration of the SectionPage class
+// DecryptPage.xaml.h
+// Declaration of the DecryptPage class
 //
 
 #pragma once
 
-#include "SectionPage.g.h"
+#include "DecryptPage.g.h"
+#include "Common\NavigationHelper.h"
+#include "DecryptModel.h"
 
 namespace kryptan_windows
 {
 	/// <summary>
-	/// A page that displays an overview of a single group, including a preview of the items
-	/// within the group.
+	/// A basic page that provides characteristics common to most applications.
 	/// </summary>
-	[Windows::UI::Xaml::Data::Bindable]
-	public ref class SectionPage sealed
+	[Windows::Foundation::Metadata::WebHostHidden]
+	public ref class DecryptPage sealed
 	{
 	public:
-		SectionPage();
+		DecryptPage();
+
 		/// <summary>
 		/// This can be changed to a strongly typed view model.
 		/// </summary>
@@ -25,13 +27,14 @@ namespace kryptan_windows
 		{
 			Windows::Foundation::Collections::IObservableMap<Platform::String^, Platform::Object^>^  get();
 		}
+
 		/// <summary>
 		/// NavigationHelper is used on each page to aid in navigation and 
 		/// process lifetime management
 		/// </summary>
-		property kryptan_windows::Common::NavigationHelper^ NavigationHelper
+		property Common::NavigationHelper^ NavigationHelper
 		{
-			kryptan_windows::Common::NavigationHelper^ get();
+			Common::NavigationHelper^ get();
 		}
 
 	protected:
@@ -39,12 +42,13 @@ namespace kryptan_windows
 		virtual void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs^ e) override;
 
 	private:
-		Windows::ApplicationModel::Resources::ResourceLoader^ _resourceLoader;
-
-		void LoadState(Platform::Object^ sender, kryptan_windows::Common::LoadStateEventArgs^ e);
-		void ItemView_ItemClick(Platform::Object^ sender, Windows::UI::Xaml::Controls::ItemClickEventArgs^ e);
+		void LoadState(Platform::Object^ sender, Common::LoadStateEventArgs^ e);
+		void SaveState(Platform::Object^ sender, Common::SaveStateEventArgs^ e);
 
 		static Windows::UI::Xaml::DependencyProperty^ _defaultViewModelProperty;
 		static Windows::UI::Xaml::DependencyProperty^ _navigationHelperProperty;
-	};
+        void goButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+
+        DecryptModel pageModel;
+    };
 }

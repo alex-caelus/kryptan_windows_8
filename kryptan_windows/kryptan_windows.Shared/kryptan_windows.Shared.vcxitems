@@ -19,145 +19,543 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)App.xaml.cpp">
       <DependentUpon>$(MSBuildThisFileDirectory)App.xaml</DependentUpon>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\3way.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\adler32.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\algebra.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\algparam.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\arc4.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\asn.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\authenc.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\base32.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\base64.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\basecode.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\bfinit.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\blowfish.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\blumshub.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\camellia.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\cast.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\casts.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\cbcmac.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ccm.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\channels.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\cmac.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\cpu.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\crc.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\cryptlib.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\cryptlib_bds.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\default.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\des.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\dessp.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\dh.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\dh2.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\dll.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\dsa.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\eax.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ec2n.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\eccrypto.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ecp.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\elgamal.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\emsa2.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\eprecomp.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\esign.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\files.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\filters.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\fips140.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\fipsalgt.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gcm.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gf256.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gf2n.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gf2_32.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gfpcrypt.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gost.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gzip.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\hex.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\hmac.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\hrtimer.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ida.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\idea.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)BaseModel.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)DecryptModel.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\3way.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\adler32.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\algebra.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\algparam.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\arc4.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\asn.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\authenc.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\base32.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\base64.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\basecode.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\bfinit.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\blowfish.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\blumshub.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\camellia.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\cast.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\casts.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\cbcmac.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ccm.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\channels.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\cmac.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\cpu.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\crc.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\cryptlib.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\cryptlib_bds.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\default.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\des.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\dessp.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\dh.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\dh2.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\dll.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\dsa.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\eax.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ec2n.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\eccrypto.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ecp.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\elgamal.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\emsa2.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\eprecomp.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\esign.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\files.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\filters.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\fips140.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\fipsalgt.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gcm.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gf256.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gf2n.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gf2_32.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gfpcrypt.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gost.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\gzip.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\hex.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\hmac.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\hrtimer.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ida.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\idea.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\integer.cpp">
       <PreprocessorDefinitions>__INTEL_COMPILER;NO_OS_DEPENDENCE;CRYPTOPP_DISABLE_SSE2;CRYPTOPP_DISABLE_ASM;KRYPTAN_CORE_DO_NOT_USE_SERVER;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\iterhash.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\luc.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\mars.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\marss.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\md2.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\md4.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\md5.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\misc.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\modes.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\mqueue.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\mqv.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\nbtheory.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\network.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\oaep.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\osrng.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\panama.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\pch.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\pkcspad.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\polynomi.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\pssr.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\pubkey.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\queue.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rabin.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\randpool.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rc2.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rc5.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rc6.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rdtables.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\regtest.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rijndael.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ripemd.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rng.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rsa.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rw.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\safer.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\salsa.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\seal.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\seed.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\serpent.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\sha.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\sha3.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\shacal2.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\shark.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\sharkbox.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\simple.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\skipjack.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\socketft.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\sosemanuk.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\square.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\squaretb.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\strciphr.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\tea.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\tftables.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\tiger.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\tigertab.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\trdlocal.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ttmac.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\twofish.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\iterhash.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\luc.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\mars.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\marss.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\md2.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\md4.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\md5.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\misc.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\modes.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\mqueue.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\mqv.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\nbtheory.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\network.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\oaep.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\osrng.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\panama.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\pch.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\pkcspad.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\polynomi.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\pssr.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\pubkey.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\queue.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rabin.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\randpool.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rc2.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rc5.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rc6.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rdtables.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\regtest.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rijndael.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ripemd.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rng.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rsa.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\rw.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\safer.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\salsa.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\seal.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\seed.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\serpent.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\sha.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\sha3.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\shacal2.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\shark.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\sharkbox.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\simple.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\skipjack.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\socketft.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\sosemanuk.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\square.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\squaretb.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\strciphr.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\tea.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\tftables.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\tiger.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\tigertab.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\trdlocal.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\ttmac.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\twofish.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\vmac.cpp">
       <PreprocessorDefinitions>__INTEL_COMPILER;NO_OS_DEPENDENCE;CRYPTOPP_DISABLE_SSE2;CRYPTOPP_DISABLE_ASM;KRYPTAN_CORE_DO_NOT_USE_SERVER;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\wait.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\wake.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\whrlpool.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\winpipes.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\xtr.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\xtrcrypt.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\zdeflate.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\zinflate.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\zlib.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\ModifiedEncryptor.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\Pwd.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\PwdFile.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\PwdFileWorker.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\PwdList.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\SecureString\SecureString.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\SerpentEncryptor.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\Server.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\wait.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\wake.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\whrlpool.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\winpipes.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\xtr.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\xtrcrypt.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\zdeflate.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\zinflate.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\zlib.cpp">
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\ModifiedEncryptor.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\Pwd.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\PwdFile.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\PwdFileWorker.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\PwdList.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\SecureString\SecureString.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\SerpentEncryptor.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\Server.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)SecureStringHandler.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml.cpp">
+      <DependentUpon>$(MSBuildThisFileDirectory)SecureTextBlock.xaml</DependentUpon>
+    </ClCompile>
     <ClInclude Include="$(MSBuildThisFileDirectory)App.xaml.h">
       <DependentUpon>$(MSBuildThisFileDirectory)App.xaml</DependentUpon>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)BaseModel.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DecryptModel.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\core.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\Exceptions.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\ModifiedEncryptor.h" />
@@ -169,14 +567,16 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\SerpentEncryptor.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\Server.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)DataModel\SampleDataSource.cpp" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)DataModel\SampleDataSource.h" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.cpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.h" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\RelayCommand.h" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)SecureStringHandler.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml.h">
+      <DependentUpon>$(MSBuildThisFileDirectory)SecureTextBlock.xaml</DependentUpon>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ProjectCapability Include="SourceItemsFromImports" />
@@ -190,6 +590,8 @@
     <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en-US\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="$(MSBuildThisFileDirectory)DataModel\SampleData.json" />
+    <Page Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 </Project>

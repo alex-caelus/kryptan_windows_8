@@ -4,7 +4,7 @@
 //
 
 #include "pch.h"
-#include "HubPage.xaml.h"
+#include "DecryptPage.xaml.h"
 #include "Libs\kryptan_core\core.h"
 
 using namespace kryptan_windows;
@@ -114,7 +114,7 @@ void App::OnLaunched(LaunchActivatedEventArgs^ e)
 				// When the navigation stack isn't restored navigate to the first page,
 				// configuring the new page by passing required information as a navigation
 				// parameter
-				rootFrame->Navigate(HubPage::typeid, e->Arguments);
+				rootFrame->Navigate(DecryptPage::typeid, e->Arguments);
 			}
 
 			// Place the frame in the current Window
@@ -132,7 +132,7 @@ void App::OnLaunched(LaunchActivatedEventArgs^ e)
 			// When the navigation stack isn't restored navigate to the first page,
 			// configuring the new page by passing required information as a navigation
 			// parameter
-			if (!rootFrame->Navigate(HubPage::typeid, e->Arguments))
+            if (!rootFrame->Navigate(DecryptPage::typeid, e->Arguments))
 			{
 				throw ref new FailureException("Failed to create initial page");
 			}

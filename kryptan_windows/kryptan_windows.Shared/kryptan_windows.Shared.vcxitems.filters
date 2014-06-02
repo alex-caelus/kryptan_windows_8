@@ -401,6 +401,17 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\adler32.cpp">
       <Filter>Libs\cryptopp</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)SecureStringHandler.cpp">
+      <Filter>Backbone</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)BaseModel.cpp">
+      <Filter>PageModels</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)DecryptModel.cpp">
+      <Filter>PageModels</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.cpp">
@@ -414,13 +425,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)DataModel\SampleDataSource.cpp">
-      <Filter>DataModel</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)App.xaml.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\Server.h">
       <Filter>Libs\kryptan_core</Filter>
     </ClInclude>
@@ -451,6 +456,17 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\SecureString\SecureString.h">
       <Filter>Libs\kryptan_core\SecureString</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)SecureStringHandler.h">
+      <Filter>Backbone</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DecryptModel.h">
+      <Filter>PageModels</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)BaseModel.h">
+      <Filter>PageModels</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.h">
@@ -464,11 +480,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)DataModel\SampleDataSource.h">
-      <Filter>DataModel</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="$(MSBuildThisFileDirectory)Assets\DarkGray.png">
       <Filter>Assets</Filter>
     </Image>
@@ -478,11 +489,6 @@
     <Image Include="$(MSBuildThisFileDirectory)Assets\MediumGray.png">
       <Filter>Assets</Filter>
     </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="$(MSBuildThisFileDirectory)DataModel\SampleData.json">
-      <Filter>DataModel</Filter>
-    </Text>
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en-US\Resources.resw">
@@ -500,9 +506,6 @@
     <Filter Include="Strings\en-US">
       <UniqueIdentifier>{0f419e92-7729-48f0-b6fd-b6ed6ff7c5e2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DataModel">
-      <UniqueIdentifier>{92ba9cec-1947-4c1e-899d-b10aa0f479c1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Common">
       <UniqueIdentifier>{36dcf0a0-fdfa-43b8-be2f-1b23de06ba2b}</UniqueIdentifier>
     </Filter>
@@ -518,5 +521,19 @@
     <Filter Include="Libs\kryptan_core\SecureString">
       <UniqueIdentifier>{63cd3fcb-7341-4ae8-8b6a-7ff102239e31}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Backbone">
+      <UniqueIdentifier>{eeac1122-086a-40c9-bfad-cf8af9e5e4b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PageModels">
+      <UniqueIdentifier>{8bd15022-4af4-420e-9100-85259ce2844e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CustomViews">
+      <UniqueIdentifier>{c51c4c3b-e814-4745-b743-08f505af7f4f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml">
+      <Filter>CustomViews</Filter>
+    </Page>
   </ItemGroup>
 </Project>

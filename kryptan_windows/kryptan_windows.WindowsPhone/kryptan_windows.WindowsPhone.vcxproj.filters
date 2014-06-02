@@ -34,30 +34,12 @@
     <AppxManifest Include="Package.appxmanifest" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="HubPage.xaml" />
+    <ClCompile Include="DecryptPage.xaml.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HubPage.xaml.cpp" />
+    <ClInclude Include="DecryptPage.xaml.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HubPage.xaml.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="ItemPage.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="ItemPage.xaml.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ItemPage.xaml.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="SectionPage.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="SectionPage.xaml.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="SectionPage.xaml.h" />
+    <Page Include="DecryptPage.xaml" />
   </ItemGroup>
 </Project>

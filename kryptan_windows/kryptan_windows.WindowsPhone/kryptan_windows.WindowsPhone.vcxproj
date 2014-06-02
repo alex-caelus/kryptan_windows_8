@@ -75,9 +75,11 @@
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <AdditionalIncludeDirectories>$(SolutionDir)\kryptan_windows\kryptan_windows.Shared\Libs;%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NO_OS_DEPENDENCE;CRYPTOPP_DISABLE_SSE2;CRYPTOPP_DISABLE_ASM;KRYPTAN_CORE_DO_NOT_USE_SERVER;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
@@ -85,9 +87,11 @@
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <AdditionalIncludeDirectories>$(SolutionDir)\kryptan_windows\kryptan_windows.Shared\Libs;%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NO_OS_DEPENDENCE;CRYPTOPP_DISABLE_SSE2;CRYPTOPP_DISABLE_ASM;KRYPTAN_CORE_DO_NOT_USE_SERVER;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -96,12 +100,14 @@
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(SolutionDir)\kryptan_windows\kryptan_windows.Shared\Libs;%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <PreprocessorDefinitions>NO_OS_DEPENDENCE;CRYPTOPP_DISABLE_SSE2;CRYPTOPP_DISABLE_ASM;KRYPTAN_CORE_DO_NOT_USE_SERVER;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <CompileAsManaged>false</CompileAsManaged>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <CompileAsWinRT>true</CompileAsWinRT>
       <ExceptionHandling>Sync</ExceptionHandling>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -110,8 +116,10 @@
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(SolutionDir)\kryptan_windows\kryptan_windows.Shared\Libs;%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <PreprocessorDefinitions>NO_OS_DEPENDENCE;CRYPTOPP_DISABLE_SSE2;CRYPTOPP_DISABLE_ASM;KRYPTAN_CORE_DO_NOT_USE_SERVER;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -130,36 +138,18 @@
     <Image Include="Assets\HubBackground.theme-light.png" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="HubPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ItemPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="SectionPage.xaml">
+    <Page Include="DecryptPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HubPage.xaml.h">
-      <DependentUpon>HubPage.xaml</DependentUpon>
-    </ClInclude>
-    <ClInclude Include="ItemPage.xaml.h">
-      <DependentUpon>ItemPage.xaml</DependentUpon>
-    </ClInclude>
-    <ClInclude Include="SectionPage.xaml.h">
-      <DependentUpon>SectionPage.xaml</DependentUpon>
+    <ClInclude Include="DecryptPage.xaml.h">
+      <DependentUpon>DecryptPage.xaml</DependentUpon>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HubPage.xaml.cpp">
-      <DependentUpon>HubPage.xaml</DependentUpon>
-    </ClCompile>
-    <ClCompile Include="ItemPage.xaml.cpp">
-      <DependentUpon>ItemPage.xaml</DependentUpon>
-    </ClCompile>
-    <ClCompile Include="SectionPage.xaml.cpp">
-      <DependentUpon>SectionPage.xaml</DependentUpon>
+    <ClCompile Include="DecryptPage.xaml.cpp">
+      <DependentUpon>DecryptPage.xaml</DependentUpon>
     </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
