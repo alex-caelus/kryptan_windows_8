@@ -8,5 +8,5 @@
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="400">
-    <Image Source="Assets/WideLogo.scale-100.png"></Image>
+    <Image x:Name="Image1" Source="Assets/WideLogo.scale-100.png"></Image>
 </UserControl>

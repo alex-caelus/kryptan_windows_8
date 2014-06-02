@@ -14,5 +14,13 @@ namespace kryptan_windows
 	{
 	public:
 		SecureTextBlock();
+
+        void SetSecureString(Kryptan::Core::SecureString text);
+        Kryptan::Core::SecureString GetSecureString();
+
+    private:
+
+        void UpdateImageSource();
+
 	};
 }

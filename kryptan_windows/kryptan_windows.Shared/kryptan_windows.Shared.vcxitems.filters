@@ -412,6 +412,12 @@
       <Filter>PageModels</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)SecureTextImageSourceD2D.cpp">
+      <Filter>CustomViews</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)SecureTextImageSourceDrawLayout.cpp">
+      <Filter>CustomViews</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.cpp">
@@ -467,6 +473,15 @@
       <Filter>PageModels</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextImageSourceD2D.h">
+      <Filter>CustomViews</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)DirectXSample.h">
+      <Filter>CustomViews</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextImageSourceDrawLayout.h">
+      <Filter>CustomViews</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.h">

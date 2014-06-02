@@ -551,11 +551,14 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml.cpp">
       <DependentUpon>$(MSBuildThisFileDirectory)SecureTextBlock.xaml</DependentUpon>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)SecureTextImageSourceD2D.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)SecureTextImageSourceDrawLayout.cpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)App.xaml.h">
       <DependentUpon>$(MSBuildThisFileDirectory)App.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)BaseModel.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DecryptModel.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DirectXSample.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\core.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\Exceptions.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\ModifiedEncryptor.h" />
@@ -577,6 +580,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml.h">
       <DependentUpon>$(MSBuildThisFileDirectory)SecureTextBlock.xaml</DependentUpon>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextImageSourceD2D.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextImageSourceDrawLayout.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectCapability Include="SourceItemsFromImports" />
