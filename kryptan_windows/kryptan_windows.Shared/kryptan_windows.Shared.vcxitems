@@ -20,6 +20,9 @@
       <DependentUpon>$(MSBuildThisFileDirectory)App.xaml</DependentUpon>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)BaseModel.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml.cpp">
+      <DependentUpon>$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml</DependentUpon>
+    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)DecryptModel.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\3way.cpp">
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
@@ -557,6 +560,9 @@
       <DependentUpon>$(MSBuildThisFileDirectory)App.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)BaseModel.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml.h">
+      <DependentUpon>$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml</DependentUpon>
+    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)DecryptModel.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DirectXSample.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\core.h" />
@@ -595,6 +601,9 @@
     <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en-US\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml">
       <SubType>Designer</SubType>
     </Page>

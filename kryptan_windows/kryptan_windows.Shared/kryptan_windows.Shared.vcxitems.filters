@@ -413,11 +413,13 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)SecureTextImageSourceD2D.cpp">
-      <Filter>CustomViews</Filter>
+      <Filter>CustomViews\SecureTextImageSource</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)SecureTextImageSourceDrawLayout.cpp">
-      <Filter>CustomViews</Filter>
+      <Filter>CustomViews\SecureTextImageSource</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardButton.xaml.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.cpp">
@@ -473,15 +475,17 @@
       <Filter>PageModels</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextImageSourceD2D.h">
-      <Filter>CustomViews</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)DirectXSample.h">
       <Filter>CustomViews</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextImageSourceDrawLayout.h">
-      <Filter>CustomViews</Filter>
+    <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextImageSourceD2D.h">
+      <Filter>CustomViews\SecureTextImageSource</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextImageSourceDrawLayout.h">
+      <Filter>CustomViews\SecureTextImageSource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardButton.xaml.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.h">
@@ -545,10 +549,19 @@
     <Filter Include="CustomViews">
       <UniqueIdentifier>{c51c4c3b-e814-4745-b743-08f505af7f4f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CustomViews\Keyboard">
+      <UniqueIdentifier>{efa73cdc-5bc9-4995-96b3-86c80ccb203c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CustomViews\SecureTextImageSource">
+      <UniqueIdentifier>{66d4bc5f-0b8b-4e38-8e13-773929a0056a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml">
       <Filter>CustomViews</Filter>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml">
+      <Filter>CustomViews\Keyboard</Filter>
     </Page>
   </ItemGroup>
 </Project>
