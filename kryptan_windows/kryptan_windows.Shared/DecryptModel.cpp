@@ -37,7 +37,7 @@ task<DecryptModel::DecryptResult> DecryptModel::decryptButtonClicked(Platform::S
                 Platform::String^ filename = ref new Platform::String(L"/secret.pwd");
                 std::wstring fullPath = std::wstring((localFolder->Path + filename)->Data());
 
-                Kryptan::Core::PwdFile* file = new Kryptan::Core::PwdFile(std::string(fullPath.begin(), fullPath.end()));
+                pwdFile = new Kryptan::Core::PwdFile(std::string(fullPath.begin(), fullPath.end()));
             }
             if (pwdFile->Exists())
             {

@@ -126,7 +126,7 @@ void kryptan_windows::DecryptPage::goButton_Click(Platform::Object^ sender, Wind
     masterkeyBox->IsEnabled = false;
     resultTextBlock->Foreground = ref new SolidColorBrush(Windows::UI::Colors::White);
     resultTextBlock->Text = "Decrypting...";
-
+    
     pageModel.decryptButtonClicked(masterkeyBox->Password).then([this](DecryptModel::DecryptResult result) {
         resultTextBlock->Text = result.statusString;
         if (result.success)

@@ -10,10 +10,11 @@ using namespace Windows::Graphics::Display;
 using namespace Windows::UI;
 using namespace Windows::UI::Xaml;
 
-using namespace Kryptan::Core;
+using namespace Caelus::Utilities;
 
-using namespace Shared;
+using namespace kryptan_windows;
 
+bool SecureTextImageSourceD2D::m_deviceIndependentResourcesCreated = false;
 Microsoft::WRL::ComPtr<ID2D1Factory> SecureTextImageSourceD2D::m_d2dFactory;
 Microsoft::WRL::ComPtr<IDWriteFactory> SecureTextImageSourceD2D::m_d2dWriteFactory;
 
@@ -23,6 +24,8 @@ SecureTextImageSourceD2D::SecureTextImageSourceD2D(int width, int height)
     m_height = height;
     m_width = width;
     previousDrawArgs = nullptr;
+
+    CreateDeviceIndependentResources();
 
     CreateDeviceResources();
 
@@ -112,27 +115,29 @@ void SecureTextImageSourceD2D::CreateDeviceResources()
 
 void SecureTextImageSourceD2D::CreateDeviceIndependentResources()
 {
-    // Create a Direct2D factory.
+    if (!m_deviceIndependentResourcesCreated)
+    {
+        m_deviceIndependentResourcesCreated = true;
+        // Create a Direct2D factory.
+        DX::ThrowIfFailed(
+            D2D1CreateFactory<ID2D1Factory>(
+            D2D1_FACTORY_TYPE_SINGLE_THREADED, &m_d2dFactory
+            )
+            );
 
-    DX::ThrowIfFailed(
-        D2D1CreateFactory<ID2D1Factory>(
-        D2D1_FACTORY_TYPE_SINGLE_THREADED, &m_d2dFactory
-        )
-        );
 
-
-    // Create a DirectWrite factory.
-    DX::ThrowIfFailed(
-        DWriteCreateFactory(
-        DWRITE_FACTORY_TYPE_SHARED,
-        __uuidof(m_d2dWriteFactory),
-        &m_d2dWriteFactory
-        )
-        );
-
+        // Create a DirectWrite factory.
+        DX::ThrowIfFailed(
+            DWriteCreateFactory(
+            DWRITE_FACTORY_TYPE_SHARED,
+            __uuidof(m_d2dWriteFactory),
+            &m_d2dWriteFactory
+            )
+            );
+    }
 }
 
-void SecureTextImageSourceD2D::CreateTextFormatResource(const WCHAR msc_fontName[], const FLOAT msc_fontSize)
+void SecureTextImageSourceD2D::CreateTextFormatResource(const WCHAR msc_fontName[], const FLOAT msc_fontSize, SecureTextHorizontalAlign hAlign, SecureTextVerticalAlign vAlign)
 {
         // Create a DirectWrite text format object.
     DX::ThrowIfFailed(
@@ -147,14 +152,43 @@ void SecureTextImageSourceD2D::CreateTextFormatResource(const WCHAR msc_fontName
         &m_d2dWriteTextFormat
         )
         );
+
+    DWRITE_TEXT_ALIGNMENT dhAlign;
+    DWRITE_PARAGRAPH_ALIGNMENT dvAlign;
+
+    switch (hAlign)
+    {
+    case SecureTextHorizontalAlign::LEFT:
+        dhAlign = DWRITE_TEXT_ALIGNMENT_LEADING;
+        break;
+    case SecureTextHorizontalAlign::CENTER:
+        dhAlign = DWRITE_TEXT_ALIGNMENT_CENTER;
+        break;
+    case SecureTextHorizontalAlign::RIGHT:
+        dhAlign = DWRITE_TEXT_ALIGNMENT_TRAILING;
+        break;
+    }
+    switch (vAlign)
+    {
+    case SecureTextVerticalAlign::TOP:
+        dvAlign = DWRITE_PARAGRAPH_ALIGNMENT_NEAR;
+        break;
+    case SecureTextVerticalAlign::MIDDLE:
+        dvAlign = DWRITE_PARAGRAPH_ALIGNMENT_CENTER;
+        break;
+    case SecureTextVerticalAlign::BOTTOM:
+        dvAlign = DWRITE_PARAGRAPH_ALIGNMENT_FAR;
+        break;
+    }
+
     
     // Center the text horizontally and vertically.
     DX::ThrowIfFailed(
-        m_d2dWriteTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER)
+        m_d2dWriteTextFormat->SetTextAlignment(dhAlign)
         );
 
     DX::ThrowIfFailed(
-        m_d2dWriteTextFormat->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_CENTER)
+        m_d2dWriteTextFormat->SetParagraphAlignment(dvAlign)
         );
 
 }
@@ -283,14 +317,10 @@ void SecureTextImageSourceD2D::Draw(SecureTextImageSourceDrawLayout^ args)
 
     Clear(args->BackroundColor);
 
-    void* ptr = (void*)args->Text.ToInt32();
-
     if (!args->Equals(previousDrawArgs, false))
     {
-        CreateTextFormatResource(args->FontName->Data(), args->FontSize);
+        CreateTextFormatResource(args->FontName->Data(), args->FontSize, args->TextAlignHorizontal, args->TextAlignVertical);
     }
-
-    SecureString* text = (SecureString*)ptr;
 
     ComPtr<ID2D1SolidColorBrush> brush;
     DX::ThrowIfFailed(
@@ -302,7 +332,8 @@ void SecureTextImageSourceD2D::Draw(SecureTextImageSourceDrawLayout^ args)
 
     D2D_RECT_F rect = D2D1::RectF(0, 0, (float)m_width, (float)m_height);
 
-    m_d2dContext->DrawText((WCHAR*)text->getUnsecureString(), text->length(), m_d2dWriteTextFormat.Get(), &rect, brush.Get());
+    m_d2dContext->DrawText((WCHAR*)args->Text.getUnsecureString(), args->Text.length()/2, m_d2dWriteTextFormat.Get(), &rect, brush.Get());
+    args->Text.UnsecuredStringFinished();
 
     EndDraw();
 }

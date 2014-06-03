@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "SecureStringHandler.h"
 
+using namespace Caelus::Utilities;
 
 /// <summary>
 /// Initializes a new instance of the <see cref="SecureStringHandler" /> class.
@@ -33,7 +34,7 @@ SecureStringHandler::~SecureStringHandler()
 /// Gets the corresponding secure string.
 /// </summary>
 /// <returns></returns>
-Kryptan::Core::SecureString SecureStringHandler::getCorrespondingSecureString()
+SecureString SecureStringHandler::getCorrespondingSecureString()
 {
     return secureString;
 }
@@ -42,7 +43,7 @@ Kryptan::Core::SecureString SecureStringHandler::getCorrespondingSecureString()
 /// Imports the corresponding secure string.
 /// </summary>
 /// <param name="import">The import.</param>
-void SecureStringHandler::importCorrespondingSecureString(Kryptan::Core::SecureString& import)
+void SecureStringHandler::importCorrespondingSecureString(Caelus::Utilities::SecureString& import)
 {
 
 }

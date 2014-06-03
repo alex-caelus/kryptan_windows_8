@@ -4,7 +4,7 @@
 
 #include "SecureTextImageSourceDrawLayout.h"
 
-namespace Shared
+namespace kryptan_windows
 {
 
     public ref class SecureTextImageSourceD2D sealed : public Windows::UI::Xaml::Media::Imaging::SurfaceImageSource
@@ -35,10 +35,11 @@ namespace Shared
         static void CreateDeviceIndependentResources();
 
         //Device independent resoures
+        static bool m_deviceIndependentResourcesCreated;
         static Microsoft::WRL::ComPtr<ID2D1Factory> m_d2dFactory;
         static Microsoft::WRL::ComPtr<IDWriteFactory> m_d2dWriteFactory;
 
-        void CreateTextFormatResource(const WCHAR msc_fontName[], const FLOAT msc_fontSize);
+        void CreateTextFormatResource(const WCHAR msc_fontName[], const FLOAT msc_fontSize, SecureTextHorizontalAlign hAlign, SecureTextVerticalAlign vAlign);
         Microsoft::WRL::ComPtr<IDWriteTextFormat> m_d2dWriteTextFormat;
 
         SecureTextImageSourceDrawLayout^ previousDrawArgs;

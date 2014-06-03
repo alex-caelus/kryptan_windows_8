@@ -8,6 +8,7 @@
 #include "DecryptPage.g.h"
 #include "Common\NavigationHelper.h"
 #include "DecryptModel.h"
+#include "SecureTextBlock.xaml.h"
 
 namespace kryptan_windows
 {

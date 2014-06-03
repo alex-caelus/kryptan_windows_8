@@ -5,6 +5,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:kryptan_windows"
+    xmlns:my="using:kryptan_windows"
     xmlns:common="using:kryptan_windows.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -52,7 +53,7 @@
                 <PasswordBox x:Name="masterkeyBox" Margin="0" VerticalAlignment="Center" PlaceholderText="Masterkey" ToolTipService.ToolTip="Please input your master key here" HorizontalAlignment="Center" Width="300" FontSize="15"/>
                 <Button x:Name="goButton" Content="GO" HorizontalAlignment="Center" Margin="10,0,0,0" VerticalAlignment="Center" Grid.Column="1" Click="goButton_Click"/>
             </StackPanel>
-            <StackPanel Margin="0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+            <StackPanel Margin="0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" Height="20">
                 <ProgressRing x:Name="progressRing1" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="25" Height="25" Foreground="White" />
                 <TextBlock x:Name="resultTextBlock" HorizontalAlignment="Left" Margin="5,0,0,0" TextWrapping="Wrap" FontSize="15" TextAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe UI"/>
             </StackPanel>

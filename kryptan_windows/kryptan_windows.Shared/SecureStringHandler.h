@@ -27,13 +27,13 @@ public:
     /// Gets the corresponding secure string.
     /// </summary>
     /// <returns></returns>
-    Kryptan::Core::SecureString getCorrespondingSecureString();
+    Caelus::Utilities::SecureString getCorrespondingSecureString();
 
     /// <summary>
     /// Imports the corresponding secure string.
     /// </summary>
     /// <param name="import">The import.</param>
-    void importCorrespondingSecureString(Kryptan::Core::SecureString& import);
+    void importCorrespondingSecureString(Caelus::Utilities::SecureString& import);
 
     /// <summary>
     /// Makes a platform string.
@@ -47,7 +47,7 @@ private:
     /// <summary>
     /// The secure string
     /// </summary>
-    Kryptan::Core::SecureString secureString;
+    Caelus::Utilities::SecureString secureString;
 
 };
 

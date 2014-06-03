@@ -6,6 +6,8 @@
 #pragma once
 
 #include "SecureTextBlock.g.h"
+#include "SecureTextImageSourceD2D.h"
+#include "SecureTextImageSourceDrawLayout.h"
 
 namespace kryptan_windows
 {
@@ -13,14 +15,20 @@ namespace kryptan_windows
 	public ref class SecureTextBlock sealed
 	{
 	public:
-		SecureTextBlock();
+        SecureTextBlock();
+        void DrawText();
 
-        void SetSecureString(Kryptan::Core::SecureString text);
-        Kryptan::Core::SecureString GetSecureString();
-
+        property SecureTextImageSourceDrawLayout^ TextOptions
+        {
+            SecureTextImageSourceDrawLayout^ get(){ return m_TextOptions; }
+        }
     private:
 
-        void UpdateImageSource();
 
+        Caelus::Utilities::SecureString b_text;
+
+        SecureTextImageSourceD2D^ m_ImageSource;
+
+        SecureTextImageSourceDrawLayout^ m_TextOptions;
 	};
 }

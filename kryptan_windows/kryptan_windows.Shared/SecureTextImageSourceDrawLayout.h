@@ -2,9 +2,9 @@
 
 #include "pch.h"
 
-
-namespace Shared
+namespace kryptan_windows
 {
+    ref class SecureTextBlock;
 
     public enum class SecureTextHorizontalAlign
     {
@@ -21,8 +21,10 @@ namespace Shared
 
     public ref class SecureTextImageSourceDrawLayout sealed
     {
+    internal:
+        property Caelus::Utilities::SecureString Text;
+        SecureTextImageSourceDrawLayout(){};
     public:
-        property Platform::IntPtr Text;
         property float FontSize;
         property Platform::String^ FontName;
         property SecureTextHorizontalAlign TextAlignHorizontal;
@@ -35,6 +37,7 @@ namespace Shared
 
         [Windows::Foundation::Metadata::DefaultOverloadAttribute]
         bool Equals(Platform::Object^ other){ return Equals((SecureTextImageSourceDrawLayout^)other); }
+
     };
 
 }

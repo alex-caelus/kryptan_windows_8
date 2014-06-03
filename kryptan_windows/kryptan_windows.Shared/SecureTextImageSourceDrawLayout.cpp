@@ -2,11 +2,13 @@
 #include "SecureTextImageSourceDrawLayout.h"
 
 
-using namespace Shared;
+using namespace kryptan_windows;
 
 
 bool SecureTextImageSourceDrawLayout::Equals(SecureTextImageSourceDrawLayout^ other, bool checkText)
 {
+    if (other == nullptr) return false;
+
     if(this->FontSize != other->FontSize) return false;
 
     if (this->BackroundColor.A != other->BackroundColor.A) return false;
@@ -22,13 +24,7 @@ bool SecureTextImageSourceDrawLayout::Equals(SecureTextImageSourceDrawLayout^ ot
     if (this->TextAlignHorizontal != other->TextAlignHorizontal) return false;
     if (this->TextAlignVertical != other->TextAlignVertical) return false;
 
-    if (checkText)
-    {
-        Kryptan::Core::SecureString* thisStr = (Kryptan::Core::SecureString*)this->Text.ToInt32();
-        Kryptan::Core::SecureString* otherStr = (Kryptan::Core::SecureString*)other->Text.ToInt32();
-
-        if (!thisStr->equals(*otherStr)) return false;
-    }
+    if (checkText && !this->Text.equals(other->Text)) return false;
 
     return true;
 }
