@@ -34,6 +34,7 @@ using namespace Windows::UI::Xaml::Navigation;
 /// </summary>
 App::App()
 {
+    setlocale(LC_ALL, "en_US.UTF-8");
 	InitializeComponent();
 	Suspending += ref new SuspendingEventHandler(this, &App::OnSuspending);
 }
