@@ -12,13 +12,17 @@
 
 namespace kryptan_windows
 {
+    enum class KeyboardCloseReason{Cancel, Done};
+
 	[Windows::Foundation::Metadata::WebHostHidden]
 	public ref class KeyboardPopup sealed
 	{
+    internal:
+        typedef std::function<void(KeyboardCloseReason, Caelus::Utilities::SecureString)> CloseCallbackFunction;
+        static Windows::UI::Xaml::Controls::Primitives::Popup^ NewPopup(CloseCallbackFunction closeCallback, Caelus::Utilities::SecureString initialValue = Caelus::Utilities::SecureString(), bool isPassword = false, Platform::String^ hint = nullptr);
+
 	public:
         KeyboardPopup();
-
-        static Windows::UI::Xaml::Controls::Primitives::Popup^ NewPopup(Windows::UI::Xaml::Controls::Page^ page);
 
         property float KeyboardWidth
         {
@@ -34,6 +38,10 @@ namespace kryptan_windows
 
     private:
         void Letter_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+
+        property CloseCallbackFunction closeCallback;
+        property Caelus::Utilities::SecureString initialValue;
+        property Windows::UI::Xaml::Controls::Primitives::Popup^ popupParent;
 
         Caelus::Utilities::SecureString currentText;
         float m_width;
@@ -53,5 +61,6 @@ namespace kryptan_windows
         void Space_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
         void Done_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
         void Paste_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+        void Back_Holding(Platform::Object^ sender, Windows::UI::Xaml::Input::HoldingRoutedEventArgs^ e);
     };
 }

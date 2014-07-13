@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "DecryptModel.h"
-#include "SecureStringHandler.h"
+#include "Backbone\SecureStringHandler.h"
 
 using namespace concurrency;
 using namespace Platform;
@@ -25,43 +25,45 @@ DecryptModel::~DecryptModel()
 /// Decrypts the button clicked.
 /// </summary>
 /// <param name="masterkeyRaw">The masterkey raw.</param>
-task<DecryptModel::DecryptResult> DecryptModel::decryptButtonClicked(Platform::String^ masterkeyRaw)
+task<DecryptModel::DecryptResult> DecryptModel::decryptButtonClicked(kryptan_windows::SecureStringContainer^ masterkeyRaw)
 {
     return create_task([this, masterkeyRaw]{
         try{
-            auto masterkeyHandler = new SecureStringHandler(masterkeyRaw);
+            auto masterkeyHandler = masterkeyRaw->get();
 
             if (pwdFile == NULL)
             {
                 Windows::Storage::StorageFolder^ localFolder = Windows::Storage::ApplicationData::Current->LocalFolder;
-                Platform::String^ filename = ref new Platform::String(L"/secret.pwd");
+                Platform::String^ filename = ref new Platform::String(L"\\secret.pwd");
                 std::wstring fullPath = std::wstring((localFolder->Path + filename)->Data());
 
                 pwdFile = new Kryptan::Core::PwdFile(std::string(fullPath.begin(), fullPath.end()));
             }
             if (pwdFile->Exists())
             {
-                pwdFile->OpenAndParse(masterkeyHandler->getCorrespondingSecureString());
+                pwdFile->OpenAndParse(masterkeyHandler);
             }
             else
             {
                 if (newMasterkey == NULL)
                 {
                     //we want the user to confirm it before applying it
+                    newMasterkey = new SecureString(masterkeyHandler);
                     DecryptResult res;
                     res.success = true;
                     res.statusString = "Input Masterkey again to confirm!";
                     return res;
                 }
-                else if (newMasterkey->getCorrespondingSecureString().equals(masterkeyHandler->getCorrespondingSecureString()))
+                else if (newMasterkey->equals(masterkeyHandler))
                 {
                     pwdFile->CreateNew();
                     if (pwdFile->IsOpen())
-                        pwdFile->Save(masterkeyHandler->getCorrespondingSecureString());
+                        pwdFile->Save(masterkeyHandler);
                 }
                 else
                 {
                     //Confirmation failed
+                    delete newMasterkey;
                     newMasterkey = NULL;
                     DecryptResult res;
                     res.success = false;

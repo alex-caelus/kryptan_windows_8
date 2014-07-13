@@ -401,24 +401,25 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\adler32.cpp">
       <Filter>Libs\cryptopp</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)SecureStringHandler.cpp">
+    <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Backbone\SecureStringHandler.cpp">
       <Filter>Backbone</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)BaseModel.cpp">
+    <ClCompile Include="$(MSBuildThisFileDirectory)PageModels\DecryptModel.cpp">
       <Filter>PageModels</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)DecryptModel.cpp">
+    <ClCompile Include="$(MSBuildThisFileDirectory)PageModels\BaseModel.cpp">
       <Filter>PageModels</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)SecureTextImageSourceD2D.cpp">
+    <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextImageSourceD2D.cpp">
       <Filter>CustomViews\SecureTextImageSource</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)SecureTextImageSourceDrawLayout.cpp">
+    <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextImageSourceDrawLayout.cpp">
       <Filter>CustomViews\SecureTextImageSource</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextBlock.xaml.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextEdit.xaml.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.cpp">
@@ -463,27 +464,28 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\SecureString\SecureString.h">
       <Filter>Libs\kryptan_core\SecureString</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)SecureStringHandler.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Backbone\SecureStringHandler.h">
       <Filter>Backbone</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)DecryptModel.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)PageModels\DecryptModel.h">
       <Filter>PageModels</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)BaseModel.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)PageModels\BaseModel.h">
       <Filter>PageModels</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)DirectXSample.h">
-      <Filter>CustomViews</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextImageSourceD2D.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextImageSourceD2D.h">
       <Filter>CustomViews\SecureTextImageSource</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextImageSourceDrawLayout.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextImageSourceDrawLayout.h">
       <Filter>CustomViews\SecureTextImageSource</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\DirectXSample.h">
+      <Filter>CustomViews\SecureTextImageSource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextBlock.xaml.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextEdit.xaml.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.h">
@@ -555,11 +557,14 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml">
-      <Filter>CustomViews</Filter>
-    </Page>
     <Page Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml">
       <Filter>CustomViews\Keyboard</Filter>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextEdit.xaml">
+      <Filter>CustomViews</Filter>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextBlock.xaml">
+      <Filter>CustomViews</Filter>
     </Page>
   </ItemGroup>
 </Project>

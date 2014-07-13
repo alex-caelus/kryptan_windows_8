@@ -7,7 +7,7 @@
 
 #include "DecryptPage.g.h"
 #include "Common\NavigationHelper.h"
-#include "DecryptModel.h"
+#include "PageModels\DecryptModel.h"
 
 namespace kryptan_windows
 {

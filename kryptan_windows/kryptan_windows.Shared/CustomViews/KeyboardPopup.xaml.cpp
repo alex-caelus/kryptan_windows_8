@@ -5,7 +5,7 @@
 
 #include "pch.h"
 #include "KeyboardPopup.xaml.h"
-#include "SecureTextBlock.xaml.h"
+#include "SecureTextEdit.xaml.h"
 
 #include <cctype>
 #include <string>
@@ -52,17 +52,24 @@ void KeyboardPopup::KeyboardHeight::set(float value)
     MasterGrid->Height = value;
     m_height = value;
 }
-Windows::UI::Xaml::Controls::Primitives::Popup^ KeyboardPopup::NewPopup(Page^ page)
+Windows::UI::Xaml::Controls::Primitives::Popup^ KeyboardPopup::NewPopup(KeyboardPopup::CloseCallbackFunction closeCallback, Caelus::Utilities::SecureString initialValue, bool isPassword, Platform::String^ hint)
 {
     auto content = ref new KeyboardPopup();
 
     content->KeyboardHeight = Window::Current->Bounds.Height;
     content->KeyboardWidth = Window::Current->Bounds.Width;
+    content->closeCallback = closeCallback;
+    content->initialValue = initialValue;
+    content->currentText = initialValue;
+    content->secureText->TextOptions->Text = content->currentText;
+    content->secureText->IsPassword = isPassword;
+    content->secureText->Hint = hint;
 
     //content->MaxWidth = Window::Current->Bounds.Width;
     //content-> = ref new SolidColorBrush(Colors::LightGray);
 
     auto pop = ref new Popup();
+    content->popupParent = pop;
     pop->Child = content;
     //pop->VerticalOffset = 10;
     //pop->HorizontalOffset = 10;
@@ -70,8 +77,7 @@ Windows::UI::Xaml::Controls::Primitives::Popup^ KeyboardPopup::NewPopup(Page^ pa
     pop->Height = 50;
     pop->IsOpen = true;
     pop->MaxWidth = 200;
-
-
+    
     return pop;
 }
 
@@ -251,8 +257,16 @@ void kryptan_windows::KeyboardPopup::Back_Click(Platform::Object^ sender, Window
     
     if (nwchars > 0)
     {
-        nwchars--;
-        currentText.assign((char*)str, nwchars * sizeof(wchar_t), false, true);
+        if (nwchars == 1)
+        {
+            //reset to zero length
+            currentText.assign(Caelus::Utilities::SecureString());
+        }
+        else
+        {
+            nwchars--;
+            currentText.assign((char*)str, nwchars * sizeof(wchar_t), false, true);
+        }
 
         secureText->TextOptions->Text = currentText;
         secureText->DrawText();
@@ -266,23 +280,42 @@ void kryptan_windows::KeyboardPopup::Back_Click(Platform::Object^ sender, Window
 
 void kryptan_windows::KeyboardPopup::Cancel_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-
+    popupParent->IsOpen = false;
+    closeCallback(KeyboardCloseReason::Cancel, initialValue);
 }
 
 
 void kryptan_windows::KeyboardPopup::Space_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
+    const wchar_t* ptr = L" ";
+    currentText.append((char*)ptr, 1 * sizeof(wchar_t), false, true);
+
+    secureText->TextOptions->Text = currentText;
+    secureText->DrawText();
+
     currentTextChanged();
 }
 
 
 void kryptan_windows::KeyboardPopup::Done_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-
+    popupParent->IsOpen = false;
+    closeCallback(KeyboardCloseReason::Done, currentText);
 }
 
 
 void kryptan_windows::KeyboardPopup::Paste_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
+    currentTextChanged();
+}
+
+
+void kryptan_windows::KeyboardPopup::Back_Holding(Platform::Object^ sender, Windows::UI::Xaml::Input::HoldingRoutedEventArgs^ e)
+{
+    currentText = Caelus::Utilities::SecureString();
+
+    secureText->TextOptions->Text = currentText;
+    secureText->DrawText();
+
     currentTextChanged();
 }

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "BaseModel.h"
-#include "SecureStringHandler.h"
+#include "CustomViews\SecureTextEdit.xaml.h"
 
 class DecryptModel : public BaseModel
 {
@@ -28,7 +28,7 @@ public:
     /// </summary>
     /// <param name="masterkeyRaw">The raw masterkey.</param>
     /// <returns>an async task</returns>
-    concurrency::task<DecryptModel::DecryptResult> decryptButtonClicked(Platform::String^ masterkeyRaw);
+    concurrency::task<DecryptModel::DecryptResult> decryptButtonClicked(kryptan_windows::SecureStringContainer^ masterkey);
 
     /// <summary>
     /// Doeses the password file exist.
@@ -37,7 +37,7 @@ public:
     bool doesPwdFileExist();
 
 private:
-    SecureStringHandler* newMasterkey;
+    Caelus::Utilities::SecureString* newMasterkey;
 
 };
 

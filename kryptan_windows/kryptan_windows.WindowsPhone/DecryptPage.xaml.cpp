@@ -5,7 +5,7 @@
 
 #include "pch.h"
 #include "DecryptPage.xaml.h"
-#include "SecureStringHandler.h"
+#include "Backbone\SecureStringHandler.h"
 #include "Libs\kryptan_core\core.h"
 #include "CustomViews\KeyboardPopup.xaml.h"
 
@@ -126,11 +126,8 @@ void kryptan_windows::DecryptPage::goButton_Click(Platform::Object^ sender, Wind
     auto statusbar = Windows::UI::ViewManagement::StatusBar::GetForCurrentView();
     statusbar->ProgressIndicator->ShowAsync();
 
-    //pageModel.decryptButtonClicked(masterkeyBox->Password).then([this, statusbar](DecryptModel::DecryptResult result) {
-    //        resultTextBlock->Text = result.statusString;
-    //        statusbar->ProgressIndicator->HideAsync();
-    //    }, task_continuation_context::use_current());
-
-    auto pop = KeyboardPopup::NewPopup(this);
-    //pop->
+    pageModel.decryptButtonClicked(masterkeyBox->getSecurePasswordContainer()).then([this, statusbar](DecryptModel::DecryptResult result) {
+            resultTextBlock->Text = result.statusString;
+            statusbar->ProgressIndicator->HideAsync();
+        }, task_continuation_context::use_current());
 }

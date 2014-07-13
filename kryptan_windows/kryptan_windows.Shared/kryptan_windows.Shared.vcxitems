@@ -19,11 +19,18 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)App.xaml.cpp">
       <DependentUpon>$(MSBuildThisFileDirectory)App.xaml</DependentUpon>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)BaseModel.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Backbone\SecureStringHandler.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml.cpp">
       <DependentUpon>$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml</DependentUpon>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)DecryptModel.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextBlock.xaml.cpp">
+      <DependentUpon>$(MSBuildThisFileDirectory)CustomViews\SecureTextBlock.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextEdit.xaml.cpp">
+      <DependentUpon>$(MSBuildThisFileDirectory)CustomViews\SecureTextEdit.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextImageSourceD2D.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextImageSourceDrawLayout.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\3way.cpp">
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).Cryptopp.pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -547,24 +554,27 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\Server.cpp">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)PageModels\BaseModel.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)PageModels\DecryptModel.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)SecureStringHandler.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml.cpp">
-      <DependentUpon>$(MSBuildThisFileDirectory)SecureTextBlock.xaml</DependentUpon>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)SecureTextImageSourceD2D.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)SecureTextImageSourceDrawLayout.cpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)App.xaml.h">
       <DependentUpon>$(MSBuildThisFileDirectory)App.xaml</DependentUpon>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)BaseModel.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Backbone\SecureStringHandler.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\DirectXSample.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml.h">
       <DependentUpon>$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml</DependentUpon>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)DecryptModel.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)DirectXSample.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextBlock.xaml.h">
+      <DependentUpon>$(MSBuildThisFileDirectory)CustomViews\SecureTextBlock.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextEdit.xaml.h">
+      <DependentUpon>$(MSBuildThisFileDirectory)CustomViews\SecureTextEdit.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextImageSourceD2D.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextImageSourceDrawLayout.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\core.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\Exceptions.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\ModifiedEncryptor.h" />
@@ -575,6 +585,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\SecureString\SecureString.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\SerpentEncryptor.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\Server.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)PageModels\BaseModel.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)PageModels\DecryptModel.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.cpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.h" />
@@ -582,12 +594,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\RelayCommand.h" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)SecureStringHandler.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml.h">
-      <DependentUpon>$(MSBuildThisFileDirectory)SecureTextBlock.xaml</DependentUpon>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextImageSourceD2D.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)SecureTextImageSourceDrawLayout.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectCapability Include="SourceItemsFromImports" />
@@ -604,7 +610,8 @@
     <Page Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="$(MSBuildThisFileDirectory)SecureTextBlock.xaml">
+    <Page Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextBlock.xaml" />
+    <Page Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextEdit.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

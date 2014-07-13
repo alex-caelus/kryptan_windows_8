@@ -5,9 +5,9 @@
 
 #pragma once
 
-#include "SecureTextBlock.g.h"
-#include "SecureTextImageSourceD2D.h"
-#include "SecureTextImageSourceDrawLayout.h"
+#include "CustomViews\SecureTextBlock.g.h"
+#include "SecureTextImageSource\SecureTextImageSourceD2D.h"
+#include "SecureTextImageSource\SecureTextImageSourceDrawLayout.h"
 
 namespace kryptan_windows
 {
@@ -30,5 +30,7 @@ namespace kryptan_windows
         SecureTextImageSourceD2D^ m_ImageSource;
 
         SecureTextImageSourceDrawLayout^ m_TextOptions;
-	};
+        void SecureTextBlock_Loaded(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+        void SecureTextBlock_SizeChanged(Platform::Object^ sender, Windows::UI::Xaml::SizeChangedEventArgs^ e);
+    };
 }

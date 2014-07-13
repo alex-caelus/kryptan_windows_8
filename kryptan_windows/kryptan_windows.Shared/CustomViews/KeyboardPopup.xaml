@@ -30,7 +30,7 @@
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <Canvas x:Name="textContainer">
-            <local:SecureTextBlock x:Name="secureText" Height="{Binding ElementName=textContainer, Path=ActualHeight}" Width="{Binding ElementName=textContainer, Path=ActualWidth}"/>
+            <local:SecureTextEdit x:Name="secureText" Canvas.Top="50" local:Editable="false" Width="{Binding ElementName=textContainer, Path=ActualWidth}"/>
             <Button x:Name="pasteButton" Content="PASTE" FontSize="10" Canvas.Top="16" MinWidth="1" MinHeight="1" Height="auto" Margin="0,0,10,0" Padding="2" BorderThickness="1" Click="Paste_Click" />
         </Canvas>
         <Grid x:Name="specialLetterGrid" Grid.Row="1">
@@ -159,7 +159,7 @@
             <Button Style="{StaticResource KeyButton}" Click="Letter_Click" Content="b" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="11"/>
             <Button Style="{StaticResource KeyButton}" Click="Letter_Click" Content="n" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="13"/>
             <Button Style="{StaticResource KeyButton}" Click="Letter_Click" Content="m" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="15"/>
-            <Button x:Name="backButton" Style="{StaticResource KeyButton}" Click="Back_Click" Content="⌫" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="17"/>
+            <Button x:Name="backButton" Style="{StaticResource KeyButton}" Click="Back_Click" Content="⌫" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="17" Holding="Back_Holding"/>
 
             <Button x:Name="cancelButton" Style="{StaticResource KeyButton}" Click="Cancel_Click" Content="Cancel" Grid.Row="3" Grid.ColumnSpan="4" Grid.Column="0"/>
             <Button x:Name="spaceButton" Style="{StaticResource KeyButton}" Click="Space_Click" Content="SPACE" Grid.Row="3" Grid.ColumnSpan="12" Grid.Column="4"/>

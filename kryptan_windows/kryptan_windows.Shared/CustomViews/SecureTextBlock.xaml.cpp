@@ -31,17 +31,30 @@ SecureTextBlock::SecureTextBlock() : m_TextOptions(ref new SecureTextImageSource
     TextOptions->BackroundColor = Windows::UI::Colors::Transparent;
     TextOptions->TextColor = Windows::UI::Colors::White;
     TextOptions->FontName = L"Verdana";
-    TextOptions->FontSize = 12;
+    TextOptions->FontSize = 16;
     TextOptions->TextAlignHorizontal = SecureTextHorizontalAlign::CENTER;
     TextOptions->TextAlignVertical = SecureTextVerticalAlign::MIDDLE;
-    wchar_t* ptr = L"This is a test.";
-    TextOptions->Text = SecureString((char*)ptr, wcslen(ptr) * 2, false, true);
+    TextOptions->Text = SecureString();
 }
 
 void SecureTextBlock::DrawText()
 {
-    m_ImageSource = ref new SecureTextImageSourceD2D((int)this->ActualWidth, (int)this->ActualHeight);
-    Image1->Source = m_ImageSource;
+    if (this->ActualHeight > 0 && this->ActualWidth > 0 )
+    {
+        m_ImageSource = ref new SecureTextImageSourceD2D((int)this->ActualWidth, (int)this->ActualHeight);
+        Image1->Source = m_ImageSource;
 
-    m_ImageSource->Draw(TextOptions);
+        m_ImageSource->Draw(TextOptions);
+    }
+}
+
+void kryptan_windows::SecureTextBlock::SecureTextBlock_Loaded(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+    DrawText();
+}
+
+
+void kryptan_windows::SecureTextBlock::SecureTextBlock_SizeChanged(Platform::Object^ sender, Windows::UI::Xaml::SizeChangedEventArgs^ e)
+{
+    DrawText();
 }
