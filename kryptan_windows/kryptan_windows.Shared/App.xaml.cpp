@@ -15,6 +15,7 @@ using namespace concurrency;
 using namespace Platform;
 using namespace Windows::ApplicationModel;
 using namespace Windows::ApplicationModel::Activation;
+using namespace Windows::ApplicationModel::Core;
 using namespace Windows::Foundation;
 using namespace Windows::Foundation::Collections;
 using namespace Windows::UI::Xaml::Media::Animation;
@@ -39,6 +40,7 @@ App::App()
     setlocale(LC_ALL, "en_US.UTF-8");
 	InitializeComponent();
 	Suspending += ref new SuspendingEventHandler(this, &App::OnSuspending);
+    Windows::ApplicationModel::Core::CoreApplication::UnhandledErrorDetected += ref new EventHandler<UnhandledErrorDetectedEventArgs^>(this, &App::OnUnhandledException);
 }
 
 /// <summary>
@@ -187,4 +189,24 @@ void App::OnSuspending(Object^ sender, SuspendingEventArgs^ e)
 	{
 		deferral->Complete();
 	});
+}
+
+void App::OnUnhandledException(Platform::Object^ sender, Windows::ApplicationModel::Core::UnhandledErrorDetectedEventArgs^ e)
+{
+    auto err = e->UnhandledError;
+
+    if (!err->Handled) //Propagate has not been called on it yet.
+    {
+        try
+        {
+            err->Propagate();
+        }
+        catch (Exception^ ex)
+        {
+            // TODO: Log error and either take action to recover
+            // or else re-throw exception to continue fail-fast
+            throw;
+        }
+
+    }
 }

@@ -5,6 +5,7 @@
 
 #include "pch.h"
 #include "DecryptPage.xaml.h"
+#include "MainHub.xaml.h"
 
 using namespace kryptan_windows;
 
@@ -35,7 +36,7 @@ DecryptPage::DecryptPage()
 
     if (!pageModel.doesPwdFileExist())
     {
-        masterkeyBox->PlaceholderText = L"New Masterkey";
+        masterkeyBox->Hint = L"New Masterkey";
     }
 }
 
@@ -126,17 +127,32 @@ void kryptan_windows::DecryptPage::goButton_Click(Platform::Object^ sender, Wind
     masterkeyBox->IsEnabled = false;
     resultTextBlock->Foreground = ref new SolidColorBrush(Windows::UI::Colors::White);
     resultTextBlock->Text = "Decrypting...";
-    
-    pageModel.decryptButtonClicked(masterkeyBox->Password).then([this](DecryptModel::DecryptResult result) {
+
+    pageModel.decryptButtonClicked(masterkeyBox->getSecureStringContainer()).then([this](DecryptModel::DecryptResult result) {
         resultTextBlock->Text = result.statusString;
-        if (result.success)
-            resultTextBlock->Foreground = ref new SolidColorBrush(Windows::UI::Colors::White);
-        else
-            resultTextBlock->Foreground = ref new SolidColorBrush(Windows::UI::Colors::Red);
+
+        switch (result.status)
+        {
+        case DecryptModel::DecryptResult::FAILED:
+            resultTextBlock->Foreground = ref new SolidColorBrush(Windows::UI::Colors::DarkRed);
+            masterkeyBox->clearSecureString();
+            break;
+        case DecryptModel::DecryptResult::CONFIRM:
+            resultTextBlock->Foreground = ref new SolidColorBrush(Windows::UI::Colors::DarkGreen);
+            masterkeyBox->clearSecureString();
+            break;
+        case DecryptModel::DecryptResult::SUCCESS:
+            this->Frame->Navigate(MainHub::typeid);
+            masterkeyBox->clearSecureString();
+            break;
+        default:
+            throw ref new Exception(-1, L"Impossible error: default DecryptResult enumeration.");
+            break;
+        }
+
         progressRing1->IsActive = false;
         progressRing1->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
         goButton->IsEnabled = true;
         masterkeyBox->IsEnabled = true;
-        masterkeyBox->Password = "";
     }, task_continuation_context::use_current());
 }

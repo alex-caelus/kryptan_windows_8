@@ -50,7 +50,7 @@
         <!--TODO: Content should be placed within the following grid-->
         <StackPanel Grid.Row="1" x:Name="ContentRoot" VerticalAlignment="Center" HorizontalAlignment="Center">
             <StackPanel Margin="0" HorizontalAlignment="Center" Orientation="Horizontal">
-                <PasswordBox x:Name="masterkeyBox" Margin="0" VerticalAlignment="Center" PlaceholderText="Masterkey" ToolTipService.ToolTip="Please input your master key here" HorizontalAlignment="Center" Width="300" FontSize="15"/>
+                <local:SecureTextEdit x:Name="masterkeyBox" Width="400" Margin="10,9,5,0" VerticalAlignment="Top" Height="39" local:IsPassword="true" local:Hint="Master key" ToolTipService.ToolTip="Please input your master key here"/>
                 <Button x:Name="goButton" Content="GO" HorizontalAlignment="Center" Margin="10,0,0,0" VerticalAlignment="Center" Grid.Column="1" Click="goButton_Click"/>
             </StackPanel>
             <StackPanel Margin="0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" Height="20">

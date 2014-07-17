@@ -50,7 +50,7 @@ task<DecryptModel::DecryptResult> DecryptModel::decryptButtonClicked(kryptan_win
                     //we want the user to confirm it before applying it
                     newMasterkey = new SecureString(masterkeyHandler);
                     DecryptResult res;
-                    res.success = true;
+                    res.status = DecryptResult::CONFIRM;
                     res.statusString = "Input Masterkey again to confirm!";
                     return res;
                 }
@@ -66,22 +66,22 @@ task<DecryptModel::DecryptResult> DecryptModel::decryptButtonClicked(kryptan_win
                     delete newMasterkey;
                     newMasterkey = NULL;
                     DecryptResult res;
-                    res.success = false;
+                    res.status = DecryptResult::FAILED;
                     res.statusString = "The keys did not match, please try again!";
                     return res;
                 }
             }
 
             DecryptResult res;
-            res.success = pwdFile->IsOpen();
-            res.statusString = ref new String(res.success ? L"Success!" : L"Unknown failure!");
+            res.status = pwdFile->IsOpen() ? DecryptResult::SUCCESS : DecryptResult::FAILED;
+            res.statusString = ref new String(pwdFile->IsOpen() ? L"Success!" : L"Unknown failure!");
 
             return res;
         }
         catch (std::exception& e)
         {
             DecryptResult res;
-            res.success = false;
+            res.status = DecryptResult::FAILED;
             res.statusString = ref new String(L"Failure: ") + SecureStringHandler::makePlatformString(e.what());
             return res;
         }

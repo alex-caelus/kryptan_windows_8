@@ -47,7 +47,9 @@ namespace kryptan_windows
             SecureTextImageSourceDrawLayout^ get(){ return m_TextOptions; }
         }
 
-        SecureStringContainer^ getSecurePasswordContainer();
+        SecureStringContainer^ getSecureStringContainer();
+
+        void clearSecureString();
 
         property bool IsPassword
         {

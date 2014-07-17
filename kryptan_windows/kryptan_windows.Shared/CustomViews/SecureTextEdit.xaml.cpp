@@ -102,7 +102,7 @@ SecureString SecureTextEdit::getSecurePassword()
     return b_text;
 }
 
-SecureStringContainer^ SecureTextEdit::getSecurePasswordContainer()
+SecureStringContainer^ SecureTextEdit::getSecureStringContainer()
 {
     return ref new SecureStringContainer(b_text);
 }
@@ -137,5 +137,13 @@ void kryptan_windows::SecureTextEdit::SecureTextEdit_Loaded(Platform::Object^ se
 
 void kryptan_windows::SecureTextEdit::SecureTextEdit_SizeChanged(Platform::Object^ sender, Windows::UI::Xaml::SizeChangedEventArgs^ e)
 {
+    DrawText();
+}
+
+
+void SecureTextEdit::clearSecureString()
+{
+    b_text = SecureString();
+    TextOptions->Text = b_text;
     DrawText();
 }

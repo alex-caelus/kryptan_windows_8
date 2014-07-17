@@ -153,15 +153,27 @@
     <Page Include="DecryptPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Dictionary.xaml">
+      <DeploymentContent>true</DeploymentContent>
+    </Page>
+    <Page Include="MainHub.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DecryptPage.xaml.h">
       <DependentUpon>DecryptPage.xaml</DependentUpon>
     </ClInclude>
+    <ClInclude Include="MainHub.xaml.h">
+      <DependentUpon>MainHub.xaml</DependentUpon>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DecryptPage.xaml.cpp">
       <DependentUpon>DecryptPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="MainHub.xaml.cpp">
+      <DependentUpon>MainHub.xaml</DependentUpon>
     </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -9,7 +9,13 @@ public:
 
     struct DecryptResult
     {
-        bool success;
+        enum RESULTTYPE
+        {
+            SUCCESS,
+            CONFIRM,
+            FAILED
+        };
+        RESULTTYPE status;
         Platform::String^ statusString;
     };
 

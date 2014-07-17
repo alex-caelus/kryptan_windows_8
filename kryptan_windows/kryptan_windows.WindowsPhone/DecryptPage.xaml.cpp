@@ -8,6 +8,7 @@
 #include "Backbone\SecureStringHandler.h"
 #include "Libs\kryptan_core\core.h"
 #include "CustomViews\KeyboardPopup.xaml.h"
+#include "MainHub.xaml.h"
 
 using namespace kryptan_windows;
 
@@ -126,8 +127,27 @@ void kryptan_windows::DecryptPage::goButton_Click(Platform::Object^ sender, Wind
     auto statusbar = Windows::UI::ViewManagement::StatusBar::GetForCurrentView();
     statusbar->ProgressIndicator->ShowAsync();
 
-    pageModel.decryptButtonClicked(masterkeyBox->getSecurePasswordContainer()).then([this, statusbar](DecryptModel::DecryptResult result) {
+    pageModel.decryptButtonClicked(masterkeyBox->getSecureStringContainer()).then([this, statusbar](DecryptModel::DecryptResult result) {
             resultTextBlock->Text = result.statusString;
+
+            switch (result.status)
+            {
+            case DecryptModel::DecryptResult::FAILED:
+                resultTextBlock->Foreground = ref new SolidColorBrush(Windows::UI::Colors::DarkRed);
+                masterkeyBox->clearSecureString();
+                break;
+            case DecryptModel::DecryptResult::CONFIRM:
+                resultTextBlock->Foreground = ref new SolidColorBrush(Windows::UI::Colors::DarkGreen);
+                masterkeyBox->clearSecureString();
+                break;
+            case DecryptModel::DecryptResult::SUCCESS:
+                this->Frame->Navigate(MainHub::typeid);
+                break;
+            default:
+                throw ref new Exception(-1, L"Impossible error: default DecryptResult enumeration.");
+                break;
+            }
+
             statusbar->ProgressIndicator->HideAsync();
         }, task_continuation_context::use_current());
 }
