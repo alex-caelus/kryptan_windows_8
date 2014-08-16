@@ -24,27 +24,50 @@ using namespace kryptan_windows;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
-SecureTextBlock::SecureTextBlock() : m_TextOptions(ref new SecureTextImageSourceDrawLayout())
+Windows::UI::Xaml::DependencyProperty^ SecureTextBlock::_TextOptionsProperty = nullptr;
+
+SecureTextBlock::SecureTextBlock()
 {
     InitializeComponent();
+}
 
-    TextOptions->BackroundColor = Windows::UI::Colors::Transparent;
-    TextOptions->TextColor = Windows::UI::Colors::White;
-    TextOptions->FontName = L"Verdana";
-    TextOptions->FontSize = 16;
-    TextOptions->TextAlignHorizontal = SecureTextHorizontalAlign::CENTER;
-    TextOptions->TextAlignVertical = SecureTextVerticalAlign::MIDDLE;
-    TextOptions->Text = SecureString();
+void SecureTextBlock::RegisterDependencyProperties()
+{
+    if (_TextOptionsProperty == nullptr)
+    {
+        _TextOptionsProperty = DependencyProperty::RegisterAttached("TextOptions", SecureTextImageSourceDrawLayout::typeid, SecureTextBlock::typeid, nullptr);
+    }
 }
 
 void SecureTextBlock::DrawText()
 {
-    if (this->ActualHeight > 0 && this->ActualWidth > 0 )
+    auto t_opt = TextOptions;
+    auto a_height = this->ActualHeight;
+    auto a_width = this->ActualWidth;
+    if (t_opt && this->ActualHeight > 0 && this->ActualWidth > 0)
     {
-        m_ImageSource = ref new SecureTextImageSourceD2D((int)this->ActualWidth, (int)this->ActualHeight);
-        Image1->Source = m_ImageSource;
+        if (!t_opt->Text.equals(lastDrawnText))
+        {
+            if (lastActualHeight != a_height || lastActualWidth != a_width)
+            {
+                m_ImageSource = ref new SecureTextImageSourceD2D((int)this->ActualWidth, (int)this->ActualHeight);
+                Image1->Source = m_ImageSource;
 
-        m_ImageSource->Draw(TextOptions);
+            }
+            try{
+                m_ImageSource->Draw(t_opt);
+            }
+            catch (std::exception &e)
+            {
+                //we recreate the drawing surface and try again.
+                m_ImageSource = ref new SecureTextImageSourceD2D((int)this->ActualWidth, (int)this->ActualHeight);
+                Image1->Source = m_ImageSource;
+                m_ImageSource->Draw(t_opt);
+            }
+        }
+        lastDrawnText = t_opt->Text;
+        lastActualHeight = a_height;
+        lastActualWidth = a_width;
     }
 }
 
@@ -55,6 +78,12 @@ void kryptan_windows::SecureTextBlock::SecureTextBlock_Loaded(Platform::Object^ 
 
 
 void kryptan_windows::SecureTextBlock::SecureTextBlock_SizeChanged(Platform::Object^ sender, Windows::UI::Xaml::SizeChangedEventArgs^ e)
+{
+    DrawText();
+}
+
+
+void kryptan_windows::SecureTextBlock::SecureTextBlock_DataContextChanged(Windows::UI::Xaml::FrameworkElement^ sender, Windows::UI::Xaml::DataContextChangedEventArgs^ args)
 {
     DrawText();
 }

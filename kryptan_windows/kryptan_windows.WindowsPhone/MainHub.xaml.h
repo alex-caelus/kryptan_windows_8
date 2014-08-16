@@ -7,6 +7,8 @@
 
 #include "MainHub.g.h"
 
+#include "PageModels\MainHubModel.h"
+
 namespace kryptan_windows
 {
 	/// <summary>
@@ -20,5 +22,19 @@ namespace kryptan_windows
 
 	protected:
 		virtual void OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs^ e) override;
-	};
+    private:
+        void LabelList_Loaded(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+
+        MainHubModel pageModel;
+
+        Windows::Foundation::Collections::IObservableVector<SecureTextImageSourceDrawLayout^>^ labels;
+        Windows::Foundation::Collections::IObservableVector<SecureTextImageSourceDrawLayout^>^ pwds;
+
+        void Hub_SizeChanged(Platform::Object^ sender, Windows::UI::Xaml::SizeChangedEventArgs^ e);
+        void LabelList_SizeChanged(Platform::Object^ sender, Windows::UI::Xaml::SizeChangedEventArgs^ e);
+
+        void LabelTapped(Object^ sender, Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e);
+        void PasswordList_Loaded(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+        void PasswordList_SizeChanged(Platform::Object^ sender, Windows::UI::Xaml::SizeChangedEventArgs^ e);
+    };
 }

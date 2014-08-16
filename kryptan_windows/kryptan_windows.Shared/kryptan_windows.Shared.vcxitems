@@ -19,7 +19,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)App.xaml.cpp">
       <DependentUpon>$(MSBuildThisFileDirectory)App.xaml</DependentUpon>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Backbone\SecureStringHandler.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml.cpp">
       <DependentUpon>$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml</DependentUpon>
     </ClCompile>
@@ -556,13 +555,14 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)PageModels\BaseModel.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)PageModels\DecryptModel.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)PageModels\MainHubModel.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Utilities\EncodingHandler.cpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)App.xaml.h">
       <DependentUpon>$(MSBuildThisFileDirectory)App.xaml</DependentUpon>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Backbone\SecureStringHandler.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\DirectXSample.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml.h">
       <DependentUpon>$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml</DependentUpon>
@@ -587,6 +587,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\Server.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)PageModels\BaseModel.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)PageModels\DecryptModel.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)PageModels\MainHubModel.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.cpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.h" />
@@ -594,6 +595,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\RelayCommand.h" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Utilities\EncodingHandler.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectCapability Include="SourceItemsFromImports" />

@@ -102,7 +102,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <AdditionalIncludeDirectories>$(SolutionDir)\kryptan_windows\kryptan_windows.Shared\Libs;%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NO_OS_DEPENDENCE;CRYPTOPP_DISABLE_SSE2;CRYPTOPP_DISABLE_ASM;KRYPTAN_CORE_DO_NOT_USE_SERVER;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SECURESTRING_DEBUG;NO_OS_DEPENDENCE;CRYPTOPP_DISABLE_SSE2;CRYPTOPP_DISABLE_ASM;KRYPTAN_CORE_DO_NOT_USE_SERVER;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
     </ClCompile>
@@ -132,7 +132,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(SolutionDir)\kryptan_windows\kryptan_windows.Shared\Libs;%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
-      <PreprocessorDefinitions>NO_OS_DEPENDENCE;CRYPTOPP_DISABLE_SSE2;CRYPTOPP_DISABLE_ASM;KRYPTAN_CORE_DO_NOT_USE_SERVER;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SECURESTRING_DEBUG;NO_OS_DEPENDENCE;CRYPTOPP_DISABLE_SSE2;CRYPTOPP_DISABLE_ASM;KRYPTAN_CORE_DO_NOT_USE_SERVER;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
     </ClCompile>
@@ -162,7 +162,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <AdditionalIncludeDirectories>$(SolutionDir)\kryptan_windows\kryptan_windows.Shared\Libs;%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NO_OS_DEPENDENCE;CRYPTOPP_DISABLE_SSE2;CRYPTOPP_DISABLE_ASM;KRYPTAN_CORE_DO_NOT_USE_SERVER;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SECURESTRING_DEBUG;NO_OS_DEPENDENCE;CRYPTOPP_DISABLE_SSE2;CRYPTOPP_DISABLE_ASM;KRYPTAN_CORE_DO_NOT_USE_SERVER;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
     </ClCompile>

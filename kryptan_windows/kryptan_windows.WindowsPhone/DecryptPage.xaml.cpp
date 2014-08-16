@@ -5,7 +5,7 @@
 
 #include "pch.h"
 #include "DecryptPage.xaml.h"
-#include "Backbone\SecureStringHandler.h"
+//#include "Utilities\SecureStringHandler.h"
 #include "Libs\kryptan_core\core.h"
 #include "CustomViews\KeyboardPopup.xaml.h"
 #include "MainHub.xaml.h"
@@ -141,6 +141,7 @@ void kryptan_windows::DecryptPage::goButton_Click(Platform::Object^ sender, Wind
                 masterkeyBox->clearSecureString();
                 break;
             case DecryptModel::DecryptResult::SUCCESS:
+                resultTextBlock->Foreground = ref new SolidColorBrush(Windows::UI::Colors::DarkGreen);
                 this->Frame->Navigate(MainHub::typeid);
                 break;
             default:

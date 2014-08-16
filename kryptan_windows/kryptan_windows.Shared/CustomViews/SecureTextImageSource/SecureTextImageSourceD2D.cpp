@@ -3,6 +3,8 @@
 
 #include "DirectXSample.h"
 
+#include "Utilities\EncodingHandler.h"
+
 using namespace Platform;
 using namespace Microsoft::WRL;
 using namespace Windows::ApplicationModel;
@@ -313,7 +315,7 @@ void SecureTextImageSourceD2D::OnSuspending(Object ^sender, SuspendingEventArgs 
 
 void SecureTextImageSourceD2D::Draw(SecureTextImageSourceDrawLayout^ args)
 {
-    if (m_width && m_height)
+    if (m_width && m_height && args)
     {
         BeginDraw(Windows::Foundation::Rect(0, 0, (float)m_width, (float)m_height));
 
@@ -334,8 +336,14 @@ void SecureTextImageSourceD2D::Draw(SecureTextImageSourceDrawLayout^ args)
 
         D2D_RECT_F rect = D2D1::RectF(0, 0, (float)m_width, (float)m_height);
 
-        m_d2dContext->DrawText((WCHAR*)args->Text.getUnsecureString(), args->Text.length() / 2, m_d2dWriteTextFormat.Get(), &rect, brush.Get());
+        auto w = EncodingHandler::makeWideString(args->Text.getUnsecureString());
         args->Text.UnsecuredStringFinished();
+        int wlen = wcslen(w);
+
+        m_d2dContext->DrawText(w, wlen, m_d2dWriteTextFormat.Get(), &rect, brush.Get());
+
+        memset(w, 0, wlen);
+        delete[] w;
 
         EndDraw();
     }

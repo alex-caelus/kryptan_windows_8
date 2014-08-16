@@ -35,9 +35,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DecryptPage.xaml.cpp" />
+    <ClCompile Include="MainHub.xaml.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DecryptPage.xaml.h" />
+    <ClInclude Include="MainHub.xaml.h" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="DecryptPage.xaml" />

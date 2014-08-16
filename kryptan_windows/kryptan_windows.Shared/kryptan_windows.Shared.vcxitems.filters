@@ -403,9 +403,6 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Backbone\SecureStringHandler.cpp">
-      <Filter>Backbone</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)PageModels\DecryptModel.cpp">
       <Filter>PageModels</Filter>
     </ClCompile>
@@ -420,6 +417,12 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextBlock.xaml.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextEdit.xaml.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)PageModels\MainHubModel.cpp">
+      <Filter>PageModels</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Utilities\EncodingHandler.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.cpp">
@@ -466,9 +469,6 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\KeyboardPopup.xaml.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Backbone\SecureStringHandler.h">
-      <Filter>Backbone</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)PageModels\DecryptModel.h">
       <Filter>PageModels</Filter>
     </ClInclude>
@@ -486,6 +486,12 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextBlock.xaml.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextEdit.xaml.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)PageModels\MainHubModel.h">
+      <Filter>PageModels</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Utilities\EncodingHandler.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.h">
@@ -540,9 +546,6 @@
     <Filter Include="Libs\kryptan_core\SecureString">
       <UniqueIdentifier>{63cd3fcb-7341-4ae8-8b6a-7ff102239e31}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Backbone">
-      <UniqueIdentifier>{eeac1122-086a-40c9-bfad-cf8af9e5e4b2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="PageModels">
       <UniqueIdentifier>{8bd15022-4af4-420e-9100-85259ce2844e}</UniqueIdentifier>
     </Filter>
@@ -554,6 +557,9 @@
     </Filter>
     <Filter Include="CustomViews\SecureTextImageSource">
       <UniqueIdentifier>{66d4bc5f-0b8b-4e38-8e13-773929a0056a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{eeac1122-086a-40c9-bfad-cf8af9e5e4b2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

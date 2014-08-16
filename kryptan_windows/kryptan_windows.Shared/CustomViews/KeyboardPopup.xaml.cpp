@@ -6,6 +6,7 @@
 #include "pch.h"
 #include "KeyboardPopup.xaml.h"
 #include "SecureTextEdit.xaml.h"
+#include "Utilities\EncodingHandler.h"
 
 #include <cctype>
 #include <string>
@@ -94,7 +95,7 @@ void kryptan_windows::KeyboardPopup::Letter_Click(Platform::Object^ sender, Wind
     String^ textBtn = (String^)button->Content;
 
     const wchar_t* ptr = textBtn->Data();
-    currentText.append((char*)ptr, textBtn->Length() * sizeof(wchar_t), false, true);
+    currentText.append(EncodingHandler::extractFromPlatformString(textBtn), 0);
 
     secureText->TextOptions->Text = currentText;
     secureText->DrawText();
@@ -251,22 +252,24 @@ void kryptan_windows::KeyboardPopup::doToggleShift()
 
 void kryptan_windows::KeyboardPopup::Back_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-    wchar_t* str = (wchar_t*)currentText.getUnsecureString();
-    str[currentText.length() / sizeof(wchar_t)] = 0;
-    int nwchars = wcslen(str);
+    //mutable!
+    char* str = currentText.getUnsecureStringM();
     
-    if (nwchars > 0)
+    if (currentText.length() > 0)
     {
-        if (nwchars == 1)
+        for (int i = currentText.length() - 1; i >= 0; i--)
         {
-            //reset to zero length
-            currentText.assign(Caelus::Utilities::SecureString());
+            char c = str[i];
+            str[i] = 0; //Delete byte
+            if (c < 0x80 || c > 0xbf)
+            {
+                //start of codepoint so we have now deleted one whole character
+                break;
+            }
         }
-        else
-        {
-            nwchars--;
-            currentText.assign((char*)str, nwchars * sizeof(wchar_t), false, true);
-        }
+
+        //imports changes!
+        currentText.UnsecuredStringFinished();
 
         secureText->TextOptions->Text = currentText;
         secureText->DrawText();
@@ -287,8 +290,7 @@ void kryptan_windows::KeyboardPopup::Cancel_Click(Platform::Object^ sender, Wind
 
 void kryptan_windows::KeyboardPopup::Space_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-    const wchar_t* ptr = L" ";
-    currentText.append((char*)ptr, 1 * sizeof(wchar_t), false, true);
+    currentText.append(" ");
 
     secureText->TextOptions->Text = currentText;
     secureText->DrawText();

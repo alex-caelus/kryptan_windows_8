@@ -3,47 +3,51 @@
 #include "BaseModel.h"
 #include "CustomViews\SecureTextEdit.xaml.h"
 
-class DecryptModel : public BaseModel
+namespace kryptan_windows
 {
-public:
 
-    struct DecryptResult
+    class DecryptModel : public BaseModel
     {
-        enum RESULTTYPE
+    public:
+
+        struct DecryptResult
         {
-            SUCCESS,
-            CONFIRM,
-            FAILED
+            enum RESULTTYPE
+            {
+                SUCCESS,
+                CONFIRM,
+                FAILED
+            };
+            RESULTTYPE status;
+            Platform::String^ statusString;
         };
-        RESULTTYPE status;
-        Platform::String^ statusString;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DecryptModel" /> class.
+        /// </summary>
+        DecryptModel();
+
+        /// <summary>
+        /// Finalizes an instance of the <see cref="DecryptModel" /> class.
+        /// </summary>
+        ~DecryptModel();
+
+        /// <summary>
+        /// Decrypt button clicked.
+        /// </summary>
+        /// <param name="masterkeyRaw">The raw masterkey.</param>
+        /// <returns>an async task</returns>
+        concurrency::task<DecryptModel::DecryptResult> decryptButtonClicked(kryptan_windows::SecureStringContainer^ masterkey);
+
+        /// <summary>
+        /// Doeses the password file exist.
+        /// </summary>
+        /// <returns></returns>
+        bool doesPwdFileExist();
+
+    private:
+        Caelus::Utilities::SecureString* newMasterkey;
+
     };
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="DecryptModel" /> class.
-    /// </summary>
-    DecryptModel();
-
-    /// <summary>
-    /// Finalizes an instance of the <see cref="DecryptModel" /> class.
-    /// </summary>
-    ~DecryptModel();
-
-    /// <summary>
-    /// Decrypt button clicked.
-    /// </summary>
-    /// <param name="masterkeyRaw">The raw masterkey.</param>
-    /// <returns>an async task</returns>
-    concurrency::task<DecryptModel::DecryptResult> decryptButtonClicked(kryptan_windows::SecureStringContainer^ masterkey);
-
-    /// <summary>
-    /// Doeses the password file exist.
-    /// </summary>
-    /// <returns></returns>
-    bool doesPwdFileExist();
-
-private:
-    Caelus::Utilities::SecureString* newMasterkey;
-
-};
-
+}

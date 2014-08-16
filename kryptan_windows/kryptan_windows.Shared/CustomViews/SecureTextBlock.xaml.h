@@ -20,8 +20,19 @@ namespace kryptan_windows
 
         property SecureTextImageSourceDrawLayout^ TextOptions
         {
-            SecureTextImageSourceDrawLayout^ get(){ return m_TextOptions; }
+            SecureTextImageSourceDrawLayout^ get()
+            { 
+                return (SecureTextImageSourceDrawLayout^)this->GetValue(TextOptionsProperty);
+            }
+            void set(SecureTextImageSourceDrawLayout^ value)
+            {
+                this->SetValue(TextOptionsProperty, value);
+                DrawText();
+            }
         }
+
+        static void RegisterDependencyProperties();
+
     private:
 
 
@@ -29,8 +40,24 @@ namespace kryptan_windows
 
         SecureTextImageSourceD2D^ m_ImageSource;
 
-        SecureTextImageSourceDrawLayout^ m_TextOptions;
         void SecureTextBlock_Loaded(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
         void SecureTextBlock_SizeChanged(Platform::Object^ sender, Windows::UI::Xaml::SizeChangedEventArgs^ e);
+
+
+        static property Windows::UI::Xaml::DependencyProperty^ TextOptionsProperty
+        {
+            Windows::UI::Xaml::DependencyProperty^ get()
+            {
+                return _TextOptionsProperty;
+            }
+        }
+
+        static Windows::UI::Xaml::DependencyProperty^ _TextOptionsProperty;
+        void SecureTextBlock_DataContextChanged(Windows::UI::Xaml::FrameworkElement^ sender, Windows::UI::Xaml::DataContextChangedEventArgs^ args);
+
+        Caelus::Utilities::SecureString lastDrawnText;
+        double lastActualHeight = 0;
+        double lastActualWidth = 0;
+
     };
 }

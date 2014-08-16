@@ -5,6 +5,7 @@
 
 #include "pch.h"
 #include "SecureTextEdit.xaml.h"
+#include "Utilities\EncodingHandler.h"
 #include "KeyboardPopup.xaml.h"
 
 using namespace kryptan_windows;
@@ -67,7 +68,7 @@ void SecureTextEdit::DrawText()
             SecureString tmp = TextOptions->Text;
             Windows::UI::Color tmpColor = TextOptions->TextColor;
             
-            TextOptions->Text = SecureString((char*)Hint->Data(), Hint->Length() * sizeof(wchar_t), false, true);
+            TextOptions->Text = SecureString(EncodingHandler::extractFromPlatformString(Hint));
             TextOptions->TextColor = Windows::UI::Colors::Gray;
             m_ImageSource->Draw(TextOptions);
             TextOptions->Text = tmp;
@@ -78,11 +79,11 @@ void SecureTextEdit::DrawText()
             SecureString tmp = TextOptions->Text;
             Windows::UI::Color tmpColor = TextOptions->TextColor;
 
-            int nchars = tmp.length() / sizeof(wchar_t);
+            int nchars = tmp.length();
             SecureString bullets;
             for (int i = 0; i < nchars; i++)
             {
-                bullets.append((char*)L"•", 1 * sizeof(wchar_t), false, true);
+                bullets.append("*");
             }
             TextOptions->Text = bullets;
 

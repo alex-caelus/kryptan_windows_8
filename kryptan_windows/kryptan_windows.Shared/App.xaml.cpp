@@ -7,6 +7,7 @@
 #include "DecryptPage.xaml.h"
 #include "Libs\kryptan_core\core.h"
 #include "CustomViews\SecureTextEdit.xaml.h"
+#include "CustomViews\SecureTextBlock.xaml.h"
 
 using namespace kryptan_windows;
 using namespace kryptan_windows::Common;
@@ -37,6 +38,7 @@ using namespace Windows::UI::Xaml::Navigation;
 App::App()
 {
     SecureTextEdit::RegisterDependencyProperties();
+    SecureTextBlock::RegisterDependencyProperties();
     setlocale(LC_ALL, "en_US.UTF-8");
 	InitializeComponent();
 	Suspending += ref new SuspendingEventHandler(this, &App::OnSuspending);

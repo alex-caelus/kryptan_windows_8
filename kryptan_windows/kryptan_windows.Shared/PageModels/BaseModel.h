@@ -2,28 +2,32 @@
 
 #include "Libs\kryptan_core\core.h"
 
-class BaseModel
+namespace kryptan_windows
 {
-public:
 
-    /// <summary>
-    /// The password file
-    /// </summary>
-    BaseModel();
+    class BaseModel
+    {
+    public:
 
-    /// <summary>
-    /// Finalizes an instance of the <see cref="BaseModel"/> class.
-    /// </summary>
-    ~BaseModel();
+        /// <summary>
+        /// The password file
+        /// </summary>
+        BaseModel();
 
-    /// <summary>
-    /// Determines whether password is decrypted.
-    /// </summary>
-    /// <returns></returns>
-    bool isPwdDecrypted();
+        /// <summary>
+        /// Finalizes an instance of the <see cref="BaseModel"/> class.
+        /// </summary>
+        ~BaseModel();
 
-protected:
+        /// <summary>
+        /// Determines whether password is decrypted.
+        /// </summary>
+        /// <returns></returns>
+        bool isPwdDecrypted();
 
-    static Kryptan::Core::PwdFile* pwdFile;
-};
+    protected:
 
+        static Kryptan::Core::PwdFile* pwdFile;
+    };
+
+}

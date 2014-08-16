@@ -8,18 +8,40 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Hub Header="Kryptan for Windows Phone 8.1" HorizontalAlignment="Left" Margin="0">
+    <Hub Header="Kryptan for Windows Phone 8.1" HorizontalAlignment="Left" Margin="0" SizeChanged="Hub_SizeChanged">
         <Hub.Background>
             <ImageBrush ImageSource="Assets/HubBackground.png"/>
         </Hub.Background>
         <HubSection Header="Labels">
             <DataTemplate>
-                <Grid/>
+                <ListView x:Name="labelsList" Loaded="LabelList_Loaded" SizeChanged="LabelList_SizeChanged" HorizontalContentAlignment="Stretch">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <local:SecureTextBlock TextOptions="{Binding}" Height="30" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </DataTemplate>
         </HubSection>
         <HubSection Header="Passwords">
             <DataTemplate>
-                <ListView x:Name="labelsList"></ListView>
+                <ListView x:Name="passwordList" Loaded="PasswordList_Loaded" SizeChanged="PasswordList_SizeChanged" HorizontalContentAlignment="Stretch">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <local:SecureTextBlock TextOptions="{Binding}" Height="30" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </DataTemplate>
         </HubSection>
         <HubSection Header="Actions" >

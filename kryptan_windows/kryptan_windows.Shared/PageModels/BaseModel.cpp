@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "BaseModel.h"
 
+using namespace kryptan_windows;
+
 /// <summary>
 /// The password file
 /// </summary>

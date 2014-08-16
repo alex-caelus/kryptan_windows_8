@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30324.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "kryptan_windows", "kryptan_windows", "{E4D61A99-24C5-4A48-BBAF-745C0E031A39}"
 EndProject
@@ -10,6 +10,11 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kryptan_windows.Windows", "kryptan_windows\kryptan_windows.Windows\kryptan_windows.Windows.vcxproj", "{F62A632E-A3EE-4197-A61C-5920C63A593A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kryptan_windows.WindowsPhone", "kryptan_windows\kryptan_windows.WindowsPhone\kryptan_windows.WindowsPhone.vcxproj", "{0DD229BF-AC31-4661-8C0A-1CCECC9BE405}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{905FE8C5-2971-4C18-93E1-D088D7B146B9}"
+	ProjectSection(SolutionItems) = preProject
+		Performance1.psess = Performance1.psess
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -47,9 +52,9 @@ Global
 		{0DD229BF-AC31-4661-8C0A-1CCECC9BE405}.Debug|ARM.ActiveCfg = Debug|ARM
 		{0DD229BF-AC31-4661-8C0A-1CCECC9BE405}.Debug|ARM.Build.0 = Debug|ARM
 		{0DD229BF-AC31-4661-8C0A-1CCECC9BE405}.Debug|ARM.Deploy.0 = Debug|ARM
-		{0DD229BF-AC31-4661-8C0A-1CCECC9BE405}.Debug|Win32.ActiveCfg = Debug|Win32
-		{0DD229BF-AC31-4661-8C0A-1CCECC9BE405}.Debug|Win32.Build.0 = Debug|Win32
-		{0DD229BF-AC31-4661-8C0A-1CCECC9BE405}.Debug|Win32.Deploy.0 = Debug|Win32
+		{0DD229BF-AC31-4661-8C0A-1CCECC9BE405}.Debug|Win32.ActiveCfg = Debug|ARM
+		{0DD229BF-AC31-4661-8C0A-1CCECC9BE405}.Debug|Win32.Build.0 = Debug|ARM
+		{0DD229BF-AC31-4661-8C0A-1CCECC9BE405}.Debug|Win32.Deploy.0 = Debug|ARM
 		{0DD229BF-AC31-4661-8C0A-1CCECC9BE405}.Debug|x64.ActiveCfg = Debug|Win32
 		{0DD229BF-AC31-4661-8C0A-1CCECC9BE405}.Release|ARM.ActiveCfg = Release|ARM
 		{0DD229BF-AC31-4661-8C0A-1CCECC9BE405}.Release|ARM.Build.0 = Release|ARM

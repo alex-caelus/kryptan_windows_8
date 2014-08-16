@@ -7,6 +7,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     d:DesignHeight="300"
-    d:DesignWidth="400" Loaded="SecureTextBlock_Loaded" SizeChanged="SecureTextBlock_SizeChanged">
+    d:DesignWidth="400" Loaded="SecureTextBlock_Loaded" SizeChanged="SecureTextBlock_SizeChanged" DataContextChanged="SecureTextBlock_DataContextChanged">
     <Image x:Name="Image1" Source="Assets/WideLogo.scale-100.png"></Image>
 </UserControl>
