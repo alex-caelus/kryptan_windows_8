@@ -5,6 +5,7 @@
 
 #include "pch.h"
 #include "MainHub.xaml.h"
+#include "DecryptPage.xaml.h"
 #include "CustomViews\SecureTextBlock.xaml.h"
 
 using namespace kryptan_windows;
@@ -88,7 +89,7 @@ void kryptan_windows::MainHub::PasswordList_Loaded(Platform::Object^ sender, Win
         pwd->TextAlignVertical = SecureTextVerticalAlign::MIDDLE;
     }
 
-    //list->ItemsSource = pwds;
+    list->ItemsSource = pwds;
 }
 
 
@@ -123,4 +124,10 @@ void kryptan_windows::MainHub::LabelTapped(Object^ sender, Windows::UI::Xaml::In
 void kryptan_windows::MainHub::PasswordList_SizeChanged(Platform::Object^ sender, Windows::UI::Xaml::SizeChangedEventArgs^ e)
 {
 
+}
+
+
+void kryptan_windows::MainHub::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+    this->Frame->Navigate(DecryptPage::typeid);
 }

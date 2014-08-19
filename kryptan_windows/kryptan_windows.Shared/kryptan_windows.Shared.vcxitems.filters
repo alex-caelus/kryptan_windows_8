@@ -423,6 +423,12 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Utilities\EncodingHandler.cpp">
       <Filter>Utilities</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextBitmapFactory.cpp">
+      <Filter>CustomViews\SecureTextImageSource</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextBitmapSourceD2D.cpp">
+      <Filter>CustomViews\SecureTextImageSource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.cpp">
@@ -491,6 +497,12 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Utilities\EncodingHandler.h">
       <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextBitmapFactory.h">
+      <Filter>CustomViews\SecureTextImageSource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextBitmapSourceD2D.h">
+      <Filter>CustomViews\SecureTextImageSource</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

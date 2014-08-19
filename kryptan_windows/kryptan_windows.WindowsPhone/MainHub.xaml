@@ -46,7 +46,9 @@
         </HubSection>
         <HubSection Header="Actions" >
             <DataTemplate>
-                <Grid/>
+                <Grid>
+                    <Button Click="Button_Click" Content="Navigate to decrypt page"/>
+                </Grid>
             </DataTemplate>
         </HubSection>
     </Hub>

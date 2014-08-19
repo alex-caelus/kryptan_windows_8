@@ -36,5 +36,6 @@ namespace kryptan_windows
         void LabelTapped(Object^ sender, Windows::UI::Xaml::Input::TappedRoutedEventArgs^ e);
         void PasswordList_Loaded(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
         void PasswordList_SizeChanged(Platform::Object^ sender, Windows::UI::Xaml::SizeChangedEventArgs^ e);
+        void Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
     };
 }

@@ -28,6 +28,8 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextEdit.xaml.cpp">
       <DependentUpon>$(MSBuildThisFileDirectory)CustomViews\SecureTextEdit.xaml</DependentUpon>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextBitmapFactory.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextBitmapSourceD2D.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextImageSourceD2D.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextImageSourceDrawLayout.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Libs\cryptopp\3way.cpp">
@@ -573,6 +575,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextEdit.xaml.h">
       <DependentUpon>$(MSBuildThisFileDirectory)CustomViews\SecureTextEdit.xaml</DependentUpon>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextBitmapFactory.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextBitmapSourceD2D.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextImageSourceD2D.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CustomViews\SecureTextImageSource\SecureTextImageSourceDrawLayout.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Libs\kryptan_core\core.h" />

@@ -346,5 +346,7 @@ void SecureTextImageSourceD2D::Draw(SecureTextImageSourceDrawLayout^ args)
         delete[] w;
 
         EndDraw();
+
+        previousDrawArgs = args;
     }
 }

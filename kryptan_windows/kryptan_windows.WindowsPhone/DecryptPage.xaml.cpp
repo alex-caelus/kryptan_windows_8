@@ -37,6 +37,15 @@ DecryptPage::DecryptPage()
 	SetValue(_navigationHelperProperty, navigationHelper);
 	navigationHelper->LoadState += ref new Common::LoadStateEventHandler(this, &DecryptPage::LoadState);
 	navigationHelper->SaveState += ref new Common::SaveStateEventHandler(this, &DecryptPage::SaveState);
+    auto options = ref new SecureTextImageSourceDrawLayout();
+    options->Text = SecureString("This is a test");
+    options->BackroundColor = Windows::UI::Colors::Transparent;
+    options->TextColor = Windows::UI::Colors::White;
+    options->FontName = L"Verdana";
+    options->FontSize = 16;
+    options->TextAlignHorizontal = SecureTextHorizontalAlign::CENTER;
+    options->TextAlignVertical = SecureTextVerticalAlign::MIDDLE;
+    test->TextOptions = options;
 }
 
 DependencyProperty^ DecryptPage::_defaultViewModelProperty =

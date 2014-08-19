@@ -36,6 +36,7 @@
             <local:SecureTextEdit x:Name="masterkeyBox" Margin="10,9,5,0" VerticalAlignment="Top" Height="39" local:IsPassword="true" local:Hint="Master key" ToolTipService.ToolTip="Please input your master key here"/>
             <Button x:Name="goButton" Content="GO" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Column="1" Margin="5,0,10,0" Click="goButton_Click" />
             <TextBlock x:Name="resultTextBlock" TextWrapping="Wrap" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top" Margin="10,55,0,0" Foreground="DarkRed" FontSize="{StaticResource TextStyleLargeFontSize}"/>
+            <local:SecureTextBlock x:Name="test" VerticalAlignment="Top" Height="39" Grid.ColumnSpan="2" Margin="46,126,78,0" />
         </Grid>
     </Grid>
 </Page>

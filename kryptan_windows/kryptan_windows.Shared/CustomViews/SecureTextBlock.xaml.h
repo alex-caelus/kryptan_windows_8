@@ -9,6 +9,8 @@
 #include "SecureTextImageSource\SecureTextImageSourceD2D.h"
 #include "SecureTextImageSource\SecureTextImageSourceDrawLayout.h"
 
+#include <map>
+
 namespace kryptan_windows
 {
 	[Windows::Foundation::Metadata::WebHostHidden]
@@ -58,6 +60,12 @@ namespace kryptan_windows
         Caelus::Utilities::SecureString lastDrawnText;
         double lastActualHeight = 0;
         double lastActualWidth = 0;
+
+        SecureTextImageSourceD2D^ m_secureimagesource;
+        SecureTextImageSourceD2D^ getImageSource(int height, int width, bool recreate);
+        //static SecureTextImageSourceD2D^ getImageSource(int height, int width, bool recreate);
+
+        //static std::map<std::pair<int, int>, SecureTextImageSourceD2D^ > _ImageSourceList;
 
     };
 }
